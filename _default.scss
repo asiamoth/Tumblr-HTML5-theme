@@ -1,0 +1,266 @@
+// ------------------------------------
+// Variables
+// ------------------------------------
+
+//// Color
+$white:        rgb(255, 255, 255);
+$black:        rgb(  0,   0,   0);
+$darkestblue:  rgb( 39, 135, 231);
+$darkblue:     rgb(135, 183, 231);
+$blue:         rgb(183, 207, 231);
+$lightblue:    rgb(207, 219, 231);
+$lightestblue: rgb(219, 231, 255);
+$yellow:       rgb(255, 222,   0);
+
+//// Traditional Japanese Color Name
+// http://2xup.org/repos/
+$aka: #e60033;
+$karakurenai: #e95464;
+$kokihi: #c9171e;
+
+$kiiro: #ffd900;
+$urahayanagi: #c1d8ac;
+
+$aijiro: #ebf6f7;
+
+$fujimurasaki: #a59aca;
+$wakamurasaki: #bc64a4;
+
+$shiro: #ffffff;
+$nyuuhaku-shoku: #f3f3f3;
+$shironeri: #f3f3f2;
+$ginnezu: #afafb0;
+$genjinezu: #888084;
+$hai-iro: #7d7d7d;
+$shikkoku: #0d0015;
+$sumi: #595857;
+
+
+//// Font Family
+$sans-serif: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "MS PGothic",sans-serif;
+$monospace: "Courier", "Consolas", "Courier New", monospace;
+$serif: "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "ＭＳ Ｐ明朝", "MS PMincho", serif;
+$helvetica: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
+//// Font Size
+$font10px: 77%;
+$font11px: 85%;
+$font12px: 93%;
+$font13px: 100%;
+$font14px: 108%;
+$font15px: 116%;
+$font16px: 123.1%;
+$font17px: 131%;
+$font18px: 138.5%;
+$font19px: 146.5%;
+$font20px: 153.9%;
+$font21px: 161.6%;
+$font22px: 167%;
+$font23px: 174%;
+$font24px: 182%;
+$font25px: 189%;
+$font26px: 197%;
+
+// mark
+// “”
+$ldquo: "\201C";
+$rdquo: "\201D";
+// ≪≫
+$laquo: "\00AB";
+$raquo: "\00BB";
+
+
+// ------------------------------------
+// mixin
+// ------------------------------------
+
+@mixin default-font{
+  font: 13px/1.231 $sans-serif;
+}
+
+@mixin clearfix {
+  .lte7 & {
+	zoom: 1; }
+
+  &:before,
+  &:after {
+	display: block;
+	height: 0;
+	visibility: hidden;
+	content: "\0020";
+  }
+
+  &:after {
+	clear: both;
+  }
+}
+
+@mixin rounded($side, $radius: 10px) {
+  border-#{$side}-radius: $radius;
+  -moz-border-radius-#{$side}: $radius;
+  -webkit-border-#{$side}-radius: $radius;
+}
+
+@mixin round($radius: 10px) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+// div a => block
+@mixin a-block {
+  display: block;
+  /* IE start */
+  position: relative;
+  /* IE end */
+}
+
+@mixin float($direction: left) {
+  float: #{$direction};
+  display: inline;
+}
+
+// Image Replacement
+@mixin rep($z-index: 3, $position: relative) {
+  // http://digital-nb.com/wp/archives/97
+  // height: 0;
+  // overflow: hidden;
+  // display: block;
+  // padding-top: #{$size};
+  // .lte5 & { display: none; }
+
+  // http://css-eblog.com/css-only/dkir-rollover.html
+  position: #{$position};
+  z-index: #{$z-index};
+  & a{
+	/* Firefox2 start */
+	display: -moz-inline-box;
+	/* Firefox2 end */
+	display: inline-block;
+	&:hover {
+	  /* IE6 start */
+	  position: static; }
+	/* IE6 end */ }
+  img {
+	position: relative;
+	z-index: -1;  }
+}
+
+@mixin hide {
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  display: block;
+  z-index: -1;
+
+  .lte5 & {
+	display: none;
+	padding-top: 0px;
+	zoom: 1;
+  }
+}
+
+@mixin list-img {
+  /* IE start */
+  line-height: 0;
+  vertical-align: bottom;
+  font-size: 0;
+  /* IE end */ }
+
+// https://github.com/hail2u/scss-partials/blob/master/_speech-bubble.scss
+@mixin speech-bubble($bgcolor: #9cf, $round-size: 6px, $tail-size: 12px, $tail-position: 24px) {
+  position: relative;
+  background-color: $bgcolor;
+  -moz-border-radius: $round-size;
+  -webkit-border-radius: $round-size;
+  border-radius: $round-size;
+
+  &:before {
+	border-top-width: $tail-size;
+	border-right-width: $tail-size;
+	border-bottom-width: 0;
+	border-left-width: $tail-size;
+	border-color: $bgcolor transparent;
+	border-style: solid;
+	display: block;
+	position: absolute;
+	bottom: -$tail-size;
+	left: $tail-position;
+	width: 0;
+	height: 0;
+	content: "";
+  }
+}
+
+@mixin bordered-speech-bubble($background-color: #9cf, $border-color: #369, $border-size: 4px, $round-size: 8px, $tail-size: 16px, $tail-position: 16px) {
+  border: $border-size solid $border-color;
+  position: relative;
+  background-color: $background-color;
+  -moz-border-radius: $round-size;
+  -webkit-border-radius: $round-size;
+  border-radius: $round-size;
+
+  &:before {
+	border-top-width: $tail-size;
+	border-right-width: $tail-size;
+	border-bottom-width: 0;
+	border-left-width: $tail-size;
+	border-color: $border-color transparent;
+	border-style: solid;
+	display: block;
+	position: absolute;
+	bottom: (- $tail-size);
+	left: $tail-position;
+	width: 0;
+	height: 0;
+	content: "";
+  }
+
+  &:after {
+	border-top-width: $tail-size;
+	border-right-width: $tail-size;
+	border-bottom-width: 0;
+	border-left-width: $tail-size;
+	border-color: $background-color transparent;
+	border-style: solid;
+	display: block;
+	position: absolute;
+	bottom: (- $tail-size + $border-size * 1.5);
+	left: $tail-position;
+	width: 0;
+	height: 0;
+	content: "";
+  }
+}
+
+// https://gist.github.com/277379
+@mixin opacity($opacity: 0.5) {
+  filter: alpha(opacity = $opacity * 100);
+  -moz-opacity: $opacity;
+  -khtml-opacity: $opacity;
+  opacity: $opacity;
+}
+
+// http://www.htmq.com/css3/transform.shtml
+@mixin transform($transform: rotate(-30deg))  {
+  -moz-transform: $transform;
+  -webkit-transform: $transform;
+  -o-transform: $transform;
+  transform: $transform;
+}
+
+// http://www.htmq.com/css3/transform-origin.shtml
+@mixin transform-origin($transform-origin: 50% 50%) {
+  -moz-transform-origin: $transform-origin;
+  -webkit-transform-origin: $transform-origin;
+  -o-transform-origin: $transform-origin;
+  -ms-transform-origin: $transform-origin;
+  transform-origin: $transform-origin;
+}
+
+// http://www.htmq.com/css3/box-shadow.shtml
+@mixin box-shadow($box-shadow: rgba(0, 0, 0, 0.5)) {
+-moz-box-shadow: $box-shadow;
+-webkit-box-shadow: $box-shadow;
+box-shadow: $box-shadow;
+}

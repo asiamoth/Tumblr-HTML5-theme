@@ -7,21 +7,10 @@
 // ------------------------------------
 // default style
 // ------------------------------------
-@import "../css/default";
+@import "default";
 
 //// reset
-
-//@import "../css/all-reset";
-// html { @include all-reset;}
-}
-
-//@import "../css/html5-rendering";
-
-//@import "../css/bluetrip-screen";
-
-//@import "../css/hail2u-net_reset";
-
-@import "../css/html5reset-1.6.1";
+@import "html5reset-1.6.1";
 /* html5doctor.com Reset Stylesheet
  * END*/
 
@@ -29,7 +18,7 @@
 // current style
 // ------------------------------------
 /* add reset css @asiamoth
- * START */
+ * begin */
 /* (orig.: http://yui.yahooapis.com/2.8.2r1/build/fonts/fonts.css) */
 
 html body {
@@ -150,10 +139,10 @@ p.small {
   }
 
   h1 {
-	font: # {$font26px}/1.5 $helvetica;
+	font: #{$font26px}/1.5 $helvetica;
   }
   .description {
-	font: # {$font13px}/1 $sans-serif;
+	font: #{$font13px}/1 $sans-serif;
   }
   a {
 	color: $shiro;
@@ -336,7 +325,7 @@ p.small {
 	}
 	p, blockquote p, pre {
 	  margin-bottom: 1em;
-	  font: # {$font16px}/1.6 $sans-serif;
+	  font: #{$font16px}/1.6 $sans-serif;
 	}
 	p img {
 	  @include default-font;
@@ -452,13 +441,6 @@ body>footer {
 
 a {
   color: $kokihi;
-  // &:hover {
-	// color: $kokihi;
-  }
-}
-
-// h1 {
-  // font-family: $helvetica;
 }
 
 article {
