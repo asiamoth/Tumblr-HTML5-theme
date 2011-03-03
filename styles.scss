@@ -1,0 +1,535 @@
+@charset "UTF-8";
+
+// todo:
+// mark color
+// body => text-shadow
+
+// ------------------------------------
+// default style
+// ------------------------------------
+@import "../css/default";
+
+//// reset
+
+//@import "../css/all-reset";
+// html { @include all-reset;}
+}
+
+//@import "../css/html5-rendering";
+
+//@import "../css/bluetrip-screen";
+
+//@import "../css/hail2u-net_reset";
+
+@import "../css/html5reset-1.6.1";
+/* html5doctor.com Reset Stylesheet
+ * END*/
+
+// ------------------------------------
+// current style
+// ------------------------------------
+/* add reset css @asiamoth
+ * START */
+/* (orig.: http://yui.yahooapis.com/2.8.2r1/build/fonts/fonts.css) */
+
+html body {
+  @include default-font;
+  color: $shikkoku;
+
+  &.lte7 {
+	font-size: small;
+  }
+  select, input, button, textarea, button {
+	font: 99%;
+  }
+  table {
+	font-size:inherit;
+	font: 100%;
+  }
+  pre,code,kbd,samp,tt {
+	font-family:monospace;
+	line-height:1;
+	&.lte7 {
+	  font-size:108%;
+	}
+  }
+}
+/* add reset @asiamoth
+ * END */
+
+/* orig.: http://www.tumblr.com/theme/9731 */
+
+.clearfix,
+#container,
+article,
+section#myLikes {
+  @include clearfix;
+}
+
+body {
+  background: {
+	repeat: repeat-x;
+	attachment: fixed;
+	color: $kiiro;
+  }
+}
+
+a {
+  margin-right: 2px;
+  &:visited {
+	color: $wakamurasaki;
+  }
+  &:hover {
+	color: $shironeri;
+	background-color: $shikkoku;}
+  img {
+	vertical-align: bottom;
+	border-style:none;
+  }
+}
+
+q {
+  background-color: $aijiro;
+}
+
+nav ul {
+  padding-top: 1em;
+  border-top: 1px solid $urahayanagi;
+  margin: 1em 0;
+}
+
+h1 a {
+  text-decoration: none;
+  // color: $kokihi;
+  &:visited {
+	text-decoration: none;
+	//color: $kokihi;
+  }
+}
+
+code {
+  font-family: $monospace;
+}
+
+i {
+  font-style: italic;
+}
+
+em {
+  font-style: normal;
+  border-bottom: 1px dotted $sumi;
+}
+
+strong {
+  font-weight: 900;}
+
+p.small {
+  font-size: $font10px;
+}
+
+#banner, #container {
+  width: 960px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+#info, #main, #myLikes {
+  @include float(left);
+  overflow: hidden;
+  margin: 0 10px;
+}
+
+#banner {
+
+  header {
+	margin-bottom: 0px;
+	width: 100%;
+	padding: 0;
+	border-bottom: 2px solid $shikkoku;
+	background: $kokihi;
+  }
+
+  h1 {
+	font: # {$font26px}/1.5 $helvetica;
+  }
+  .description {
+	font: # {$font13px}/1 $sans-serif;
+  }
+  a {
+	color: $shiro;
+	&:visited {
+	  color: $shiro;
+	}
+	&:hover {
+	  color: $shiro;
+	}
+  }
+  h1, h2 {
+	@include float(left);
+	margin: 0 10px;
+	width: 460px;
+  }
+  h1 a {
+	text-shadow: rgba(0, 0, 0, 1) 4px 2px 0;
+  }
+}
+
+#main {
+  width: 535px;
+  // add @asiamoth
+  article {
+	background: $shiro;
+	margin-bottom: 1em;
+	border: 1px solid $urahayanagi;
+	padding: 1em;
+	header {
+	  p {
+		display: block;
+		font: $font10px $helvetica;
+		text-transform: uppercase;
+		color: $ginnezu;
+		margin: 0 0 1em;
+		a {
+		  text-decoration: none;
+		  color: $ginnezu;
+		  &:visited {
+			text-decoration: none;
+			color: $wakamurasaki;
+		  }
+		}
+	  }
+	  h1 {
+		font: $font16px $helvetica;
+		line-height: 1;
+		margin-top: 0;
+	  }
+	}
+	blockquote {
+	  border-left: 2px dotted $ginnezu;
+	  padding-left: 1em;
+	  margin-left: 1em;
+	}
+	section.notes ol.notes {
+	  font: $font10px $sans-serif;
+	  margin: 0;
+	  li {
+		list-style: none;
+		border-top: 1px solid $nyuuhaku-shoku;
+		margin: 0;
+		padding: .5em 0;
+		img {
+		  vertical-align: middle;
+		  border: 2px solid $ginnezu;
+		}
+	  }
+	}
+	footer {
+	  font: $font10px $sans-serif;
+	  border-top: 1px solid $nyuuhaku-shoku;
+	  padding-top: 1em;
+	  a {
+		text-decoration: none;
+		color: $ginnezu;
+		&:visited {
+		  text-decoration: none;
+		  color: $wakamurasaki;
+		}
+	  }
+	  ul li {
+		list-style: none;
+		display: inline;
+		color: $ginnezu;
+		margin: 0 4px 0 0;
+		&.reblogged, &.notes, &.tagged {
+		  padding-left: 18px;
+		  padding-bottom: 4px;
+		  line-height: 20px;
+		  background-repeat: no-repeat;
+		}
+		&.reblogged {
+		  background-image: url('http://static.tumblr.com/pwgidgy/xKal11o10/reblog.png');
+		}
+		&.notes {
+		  background-image: url('http://static.tumblr.com/pwgidgy/1n1l11n7i/notes.png');
+		}
+		&.tagged {
+		  background-image: url('http://static.tumblr.com/pwgidgy/XgAl11o29/tags.png');
+		  a {
+			&:after {
+			  content: ",";
+			}
+			&:last-child:after {
+			  content: "";
+			}
+		  }
+		}
+	  }
+	}
+	&.link {
+	  h1 {
+	  }
+	}
+	&.quote blockquote {
+	  font: $font16px $serif;
+
+	  @include bordered-speech-bubble($aijiro, $ginnezu);
+
+	  //position: relative;
+	  //background: $nyuuhaku-shoku;
+	  //@include round(10px);
+
+	  //border: none;
+	  margin: 0;
+	  padding: 1em;
+	  + p {
+		font-style: italic;
+		margin: 10px 0 1em 60px;
+	  }
+	  &:after {
+
+		//display: block;
+		//position: absolute;
+		//bottom: -40px;
+		//left: 25px;
+		//content: "\00a0";
+		//width: 0;
+		//height: 0;
+		//border-color: transparent $nyuuhaku-shoku;
+		//border-style: solid;
+		//border-width: 0 20px 40px 0;
+	  }
+
+	}
+	&.photo div.photo {
+	  text-align: center;
+	  padding-bottom: 1em;
+	}
+	&.chat p {
+	  margin: 0;
+	  padding: 1em;
+	  &.odd {
+		background: $nyuuhaku-shoku;
+	  }
+	}
+	&.answer div {
+	  &.question {
+		background: $nyuuhaku-shoku;
+		border: 5px solid $nyuuhaku-shoku;
+		margin: 1em 0;
+		padding: 1em;
+	  }
+	  &.answer {
+		border: 5px solid $nyuuhaku-shoku;
+		margin: 1em 0;
+		padding: 1em;
+		p:last-child {
+		  margin-bottom: 0;
+		}
+	  }
+	}
+	&.audio div.player {
+	  margin: 1em 0;
+	}
+	// add @asiamoth
+	header p a:visited {
+	  color: $wakamurasaki;
+	}
+	p, blockquote p, pre {
+	  margin-bottom: 1em;
+	  font: # {$font16px}/1.6 $sans-serif;
+	}
+	p img {
+	  @include default-font;
+	}
+	li.notes mark {
+	  font-style: normal;
+	}
+	&.quote blockquote {
+	  div {
+		quotes: $ldquo $rdquo $laquo $raquo;
+	  }
+	  > div {
+		&:before {
+		  content: open-quote;
+		  font-weight: bold;
+		  margin-left: -0.5em;
+		}
+		&:after {
+		  content: close-quote;
+		  font-weight: bold;
+		}
+	  }
+	  div > {
+		div, p {
+		  /* tombloo=>twitter quote で余計な divがつく…… */
+		  display: inline;
+		}
+	  }
+	}
+	.photo {
+	  a {
+		/* IE */
+		text-decoration: none;
+	  }
+	}
+  }
+}
+
+#info {
+  width: 160px;
+  font: $font10px $sans-serif;
+
+  nav {
+	ul {
+	  a {
+		text-decoration: none;
+	  }
+	}
+	li {
+	  margin: 0 0 2px 20px;
+	}
+  }
+}
+
+#paging {
+  text-align: center;
+  margin: 60px auto;
+}
+
+#myLikes {
+  width: 160px;
+  font-family: $sans-serif;
+  h1 {
+	margin-bottom: 5px;
+  }
+  #searchField {
+	font-size: $font10px;
+	border: 1px solid $urahayanagi;
+	width: 134px;
+	@include round(12px);
+	background: white url('http://static.tumblr.com/pwgidgy/jbel15m9e/search.png') no-repeat 2px center;
+	padding: 4px 4px 4px 20px;
+  }
+  li {
+	list-style: none;
+	font-size: $font10px;
+	margin: 0 0 1em;
+
+	img {
+	  max-width: 160px;
+	  background: $shiro;
+	}
+
+	&.html5logo {
+	  @include list-img;
+	  img {
+		background: transparent;
+	  }
+	}
+
+	&.like_post .post_info_top {
+	  display: block !important;
+	  font-size: $font13px;
+	  color: $shikkoku;
+	  margin-bottom: 10px;
+	  border-bottom: 1px solid $urahayanagi;
+	  padding: 5px 0;
+	  a {
+		color: $shikkoku;
+		text-decoration: none;
+		font-weight: 700;
+	  }
+	}
+  }
+  #following li {
+	display: inline;
+  }
+}
+
+body>footer {
+  border-bottom: 3em solid $kokihi;
+}
+
+a {
+  color: $kokihi;
+  // &:hover {
+	// color: $kokihi;
+  }
+}
+
+// h1 {
+  // font-family: $helvetica;
+}
+
+article {
+  &.answer {
+	font-family: $sans-serif;
+  }
+  header time, &.answer div.by {
+	font-weight: 700;
+  }
+  footer ul {
+	margin: 0;
+  }
+}
+
+#myLikes {
+  blockquote, p, li:last-child {
+	margin: 0;
+  }
+  .search h1 {
+	// font: $font10px $helvetica;
+	// margin: 0;
+  }
+}
+
+/* add @asiamoth */
+
+
+#main > h1,
+#info > h1,
+#myLikes > h1,
+#myLikes .search > h2,
+#myLikes nav > h2 {
+  @include hide;
+}
+
+
+body.lte8 {
+  #main {
+	article.quote blockquote > div {
+	  /* IE だけ引用符の分がズレる */
+	  margin-left: 0;
+	}
+  }
+}
+
+body.lte7 {
+  #main {
+	article.quote {
+	  blockquote > div {
+		text-indent: -0.5em;
+		&:before { content: "“";
+		}
+		&:after  { content: "”";
+		}
+	  }
+	}
+  }
+}
+
+body>footer {
+  background: none repeat scroll 0 0 $kokihi;
+  margin-top: 0px;
+  width: 100%;
+  padding: 0;
+  border-top: 2px solid $shikkoku;
+}
+
+/* http://hail2u.posterous.com/40908624 */
+@media screen and (max-width: 960px) {
+  #banner, #container, #info, #main, #myLikes {
+	margin: 0;
+	width: 100%;
+  }
+}

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<!-- † Original theme by scott.dowding.cs † -->
+  <!--
+    　H T M L
+    　|￣￣￣|
+    　|　５　|
+    　 ＼＿／
+    -->
+
+<!-- change lang @asiamoth -->
+<html lang="ja">
+
+  <head>
+    <meta charset=utf-8>
+    {block:Pagination}<!-- add @asiamoth -->
+    <meta name="robots" content="noindex" />{/block:Pagination}
+    <meta name="if:Show Avatar" content="1"/>
+
+    <!-- change @asiamoth -->
+    <title>{block:PostSummary}{PostSummary} &mdash; {/block:PostSummary}{block:SearchPage}Search results for: {SearchQuery} &mdash; {/block:SearchPage}{Title}</title>
+
+    <!-- change @asiamoth -->
+    <meta name="description" content="{block:IndexPage}{block:Description}{MetaDescription}{/block:Description}{/block:IndexPage}{block:Permalink}{block:PostSummary}{PostSummary}{/block:PostSummary}{/block:Permalink}" />
+
+    <!--[if IE 6]><![endif]-->
+    <!-- hosting!! @asiamoth -->
+    <link rel="stylesheet" href="http://static.tumblr.com/i7vkogx/XrSlh1xqc/styles.css" type="text/css" media="screen">
+
+    <!-- change @asiamoth -->
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/asiamoth/blog" />
+    <!-- add @asiamoth -->
+    <meta name="google-site-verification" content="zWB1QZ9qVGt86ZqfQVYaMJybRJL7AD6dMoIOQC27C_M" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+
+    <!-- change @asiamoth -->
+    <link rel="first" href="http://memo.asiamoth.com/" title="Home">
+    {block:Permalink}<link rel="canonical" href="{Permalink}" />{/block:Permalink}
+    <link rel="shortcut icon" href="{Favicon}">
+
+    <!-- O・G・P!! O・G・P!! START
+      {block:IndexPage}
+      <meta property="og:title" content="{Title}" />
+      <meta property="blog" />
+      <meta property="og:description" content="{block:Description}{MetaDescription}{/block:Description}" />
+      <meta property="og:url" content="http://memo.asiamoth.com/" />
+      {/block:IndexPage}
+      {block:Permalink}
+      <meta property="og:title" content="{block:PostSummary}{PostSummary}{/block:PostSummary}" />
+      <meta property="og:type" content="article" />
+      <meta property="og:description" content="{block:PostSummary}{PostSummary}{/block:PostSummary}" />
+      <meta property="og:url" content="{Permalink}" />
+      {/block:Permalink}
+      {block:IfShowAvatar}<meta property="og:image" content="{PortraitURL-128}" />{/block:IfShowAvatar}
+      <meta property="og:site_name" content="Tumblr" />
+      O・G・P!! O・G・P!! END --><!-- invalid HTML5... @asiamoth -->
+
+    <!-- change @asiamoth -->
+    <!--[if lt IE 9]>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+      <![endif]-->
+
+    <!-- del @asiamoth
+      <meta name="color:Background" content="#f6f5ec"/>
+      <meta name="color:Link" content="#ba0b00"/>
+      <meta name="color:Link Visited" content="#d4674b"/>
+      <meta name="color:Border" content="#c8c49f"/>
+      <meta name="if:Show People I Follow" content=""/>
+      <meta name="text:Disqus Shortname" content="" />
+      -->
+
+  </head>
+
+  <!-- http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+  <!--[if lt IE 6]>  <body class="ie ie5 lte9 lte8 lte7 lte6 lte5">        <![endif]-->
+  <!--[if IE 6]>     <body class="ie ie6 lte9 lte8 lte7 lte6 gte6">        <![endif]-->
+  <!--[if IE 7]>     <body class="ie ie7 lte9 lte8 lte7 gte6 gte7">        <![endif]-->
+  <!--[if IE 8]>     <body class="ie ie8 lte9 lte8 gte6 gte7 gte8">        <![endif]-->
+  <!--[if IE 9]>     <body class="ie ie9 lte9 gte6 gte7 gte8 gte9 modern"> <![endif]-->
+  <!--[if gt IE 9]>  <body class="ie gte6 gte7 gte8 gte9 modern">          <![endif]-->
+  <!--[if !IE]><!--> <body class="no-ie modern">                       <!--<![endif]-->
+
+    <!-- #banner -->
+    <div id="banner">
+      <header>
+
+        <h1><a href="/">{Title}</a></h1>
+
+        {block:Permalink}<!-- add: @asiamoth -->
+        {block:PostSummary}<p class="description"><!-- zenback_title_begin -->{PostSummary}<!-- zenback_title_end --></p>{/block:PostSummary}{/block:Permalink}
+      </header>
+    </div>
+    <!-- /#banner -->
+
+
+    <!-- #container -->
+    <!-- add autopagerize class @asiamoth -->
+    <div id="container" class="row autopagerize_page_element">
+
+      <!-- change id @asiamoth -->
+      <!-- change section to aside @asiamoth -->
+      <!-- #info -->
+      <aside id="info">
+
+        <!-- add h1 @asiamoth -->
+        <h1>information</h1>
+        {block:IfShowAvatar}
+        <img src="{PortraitURL-128}">
+        {/block:IfShowAvatar}
+
+        <div>
+          {Description}
+        </div>
+
+        {block:HasPages}
+        <nav>
+          <ul id="pages">
+            {block:Pages}
+            <li><a href="{URL}">{Label}</a></li>
+            {/block:Pages}
+          </ul>
+        </nav>
+        {/block:HasPages}
+
+      </aside>
+      <!-- /#info -->
+
+      <!-- change id @asiamoth -->
+      <!-- #main -->
+      <section id="main">
+
+        <!-- add h1 @asiamoth -->
+        <h1>Main contents</h1>
+
+        {block:SearchPage}
+        <h2>{SearchResultCount} results for <strong>"{SearchQuery}"</strong></h2>
+        {/block:SearchPage}
+
+        {block:Posts}
+
+        <article {block:Text}class="text"{/block:Text}{block:Photo}class="photo"{/block:Photo}{block:Quote}class="quote"{/block:Quote}{block:Link}class="link"{/block:Link}{block:Answer}class="answer"{/block:Answer}{block:Chat}class="chat"{/block:Chat}{block:Video}class="video"{/block:Video}{block:Photoset}class="photoset"{/block:Photoset}{block:Audio}class="audio"{/block:Audio}>
+
+          {block:Text}
+          <header>
+            <!-- change @asiamoth -->
+            <p><a href="{Permalink}">{block:Date}<time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}" pubdate>{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}</time>{/block:Date}</a> &bull; Text Post</p>
+            {block:Title}
+            <h1><a href="{Permalink}">{Title}</a></h1>
+            {/block:Title}
+          </header>
+          <!-- add @asiamoth-->
+          <!-- zenback_body_begin -->
+          {Body}
+          <!-- zenback_body_end -->
+          {/block:Text}
+
+          {block:Photo}
+          <header>
+            <p><a href="{Permalink}">{block:Date}<time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}" pubdate>{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}</time>{/block:Date}</a> &bull; Photo Post</p>
+          </header>
+
+          <!-- add @asiamoth-->
+          <!-- zenback_body_begin -->
+          <div class="photo">
+            {LinkOpenTag}
+            <img src="{PhotoURL-500}" alt="{PhotoAlt}" />
+            {LinkCloseTag}
+          </div>
+
+          {block:Caption}
+          {Caption}
+          {/block:Caption}
+          <!-- zenback_body_end -->
+          {/block:Photo}
+
+          {block:Quote}
+          <header>
+            <p><a href="{Permalink}">{block:Date}<time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}" pubdate>{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}</time>{/block:Date}</a> &bull; Quote Post</p>
+          </header>
+
+          <!-- change @asiamoth -->
+          <!-- add @asiamoth-->
+          <!-- zenback_body_begin -->
+          <blockquote><div>{Quote}</div></blockquote>
+          {block:Source}
+          <p>{Source}</p>
+          {/block:Source}
+          <!-- zenback_body_end -->
+          {/block:Quote}
+
+          {block:Link}
+          <header>
+            <p><a href="{Permalink}">{block:Date}<time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}" pubdate>{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}</time>{/block:Date}</a> &bull; Link Post</p>
+            <h1><a href="{URL}" {Target}>{Name}</a></h1>
+          </header>
+          {block:Description}
+          <!-- add @asiamoth-->
+          <!-- zenback_body_begin -->
+          {Description}
+          <!-- zenback_body_end -->
+          {/block:Description}
+          {/block:Link}
+
+          {block:Answer}
+          <header>
+            <p><a href="{Permalink}">{block:Date}<time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}" pubdate>{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}</time>{/block:Date}</a> &bull; Answer Post</p>
+          </header>
+          <!-- add @asiamoth-->
+          <!-- zenback_body_begin -->
+          <div class="by">
+            {Asker} asked ...
+          </div>
+          <div class="question">
+            {Question}
+          </div>
+          <div class="by">
+            ... and I answered
+          </div>
+          <div class="answer">
+            {Answer}
+          </div>
+          <!-- zenback_body_end -->
+          {/block:Answer}
+
+          {block:Chat}
+          <header>
+            <p><a href="{Permalink}">{block:Date}<time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}" pubdate>{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}</time>{/block:Date}</a> &bull; Chat Post</p>
+            {block:Title}<h1><a href="{Permalink}">{Title}</a></h1>{/block:Title}
+          </header>
+          <!-- add @asiamoth-->
+          <!-- zenback_body_begin -->
+          {block:Lines}
+          <p class="chat-line {Alt}">{block:Label}<strong>{Label}</strong>{/block:Label} {Line}</p>
+          {/block:Lines}
+          <!-- zenback_body_end -->
+          {/block:Chat}
+
+          {block:Video}
+          <header>
+            <p><a href="{Permalink}">{block:Date}<time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}" pubdate>{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}</time>{/block:Date}</a> &bull; Video Post</p>
+          </header>
+          <!-- add @asiamoth-->
+          <!-- zenback_body_begin -->
+          {Video-500}
+
+          {block:Caption}
+          {Caption}
+          {/block:Caption}
+          <!-- zenback_body_end -->
+          {/block:Video}
+
+          {block:Photoset}
+          <header>
+            <p><a href="{Permalink}">{block:Date}<time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}" pubdate>{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}</time>{/block:Date}</a> &bull; Photoset Post</p>
+          </header>
+          <!-- add @asiamoth-->
+          <!-- zenback_body_begin -->
+          {Photoset-500}
+
+          {block:Caption}
+          {Caption}
+          {/block:Caption}
+          <!-- zenback_body_end -->
+          {/block:Photoset}
+
+          {block:Audio}
+          <header>
+            <p><a href="{Permalink}">{block:Date}<time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}" pubdate>{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}</time>{/block:Date}</a> &bull; Audio Post</p>
+          </header>
+          <!-- add @asiamoth-->
+          <!-- zenback_body_begin -->
+          {block:AlbumArt}
+          <img src="{AlbumArtURL}" alt="{block:Artist}{Artist}{/block:Artist}{block:TrackName} - {TrackName}{/block:TrackName}" />
+          {/block:AlbumArt}
+
+          <div class="player">{AudioPlayerGrey}</div>
+
+          <p>{PlayCountWithLabel}</p>
+          {block:ExternalAudio}
+          <p><a href="{ExternalAudioURL}">Download</a></p>
+          {/block:ExternalAudio}
+          {block:Caption}{Caption}{/block:Caption}
+          <!-- zenback_body_end -->
+          {/block:Audio}
+
+          <footer>
+            <ul>
+
+              <!-- del block:IfDisqusShortname @asiamoth -->
+
+              <!-- change @asiamoth
+                {block:RebloggedFrom}
+                <li class="reblogged"><a href="{ReblogParentURL}" title="Reblogged from {ReblogParentName}">Reblogged</a></li>
+                {/block:RebloggedFrom}
+                -->
+              {block:Reblog}
+              <li class="reblogged">
+                <span>リブログ元: <a href="{ReblogParentURL}" title="{ReblogParentName} - {ReblogParentTitle}"><img src="{ReblogParentPortraitURL-16}" alt="{ReblogParentName} - {ReblogParentTitle}" title="{ReblogParentName} - {ReblogParentTitle}" width="16" height="16" /> {ReblogParentName}</a></span>
+                {block:RebloggedFromReblog}<span class="rebloggedFrom">（初投稿: <a href="{ReblogRootURL}" title="{ReblogRootName} - {ReblogRootTitle}"><img src="{ReblogRootPortraitURL-16}" alt="{ReblogRootName} - {ReblogRootTitle}" title="{ReblogRootName} - {ReblogRootTitle}" width="16" height="16" /> {ReblogRootName}</a>）</span>{/block:RebloggedFromReblog}
+                {block:FromBookmarklet}from bookmarklet{/block:FromBookmarklet}
+                {block:FromMobile}from mobile{/block:FromMobile}
+              </li>
+              {/block:Reblog}
+
+
+              {block:NoteCount}
+              <!-- del block:IfDisqusShortname @asiamoth -->
+              <li class="notes"><mark><a href="{Permalink}#notes">{NoteCountWithLabel}</a></mark></li>
+              {/block:NoteCount}
+              {block:HasTags}
+              <li class="tagged">{block:Tags}<a href="{TagURL}">{Tag}</a> {/block:Tags}</li>
+              {/block:HasTags}
+            </ul>
+
+          </footer>
+
+
+          <!-- add @asiamoth -->
+          {block:Permalink}
+          <aside>
+            <!-- Rakuten Widget FROM HERE --><script src="http://static.tumblr.com/i7vkogx/S0wlgsu5y/rakutenwidgetsetting.js"></script><script src="http://xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js"></script><!-- Rakuten Widget TO HERE -->
+            <!-- X:S ZenBackWidget -->
+            <script>//<![CDATA[
+              document.write(unescape("%3Cscript")+" src='http://widget.zenback.jp/?base_uri=http%3A//memo.asiamoth.com/&nsid=89248360359321420%3A%3A92880381199558153&rand="+Math.ceil((new Date()*1)*Math.random())+"' type='text/javascript'"+unescape("%3E%3C/script%3E"));
+              //]]></script><!-- X:E ZenBackWidget -->
+          </aside>
+          {/block:Permalink}
+
+          {block:Permalink}
+          <!-- move @asiamoth -->
+          <!-- .notes -->
+          <section class="notes">
+            {block:PostNotes}
+            <h1>Notes</h1>
+            {PostNotes}
+            {/block:PostNotes}
+
+            <!-- del block:IfDisqusShortname @asiamoth -->
+          </section>
+          <!-- /.notes -->
+          {/block:Permalink}
+
+        </article>
+        {/block:Posts}
+
+        {block:Pagination}
+        <-- #paging -->
+        <nav id="paging">
+          <p>Page {CurrentPage} of {TotalPages}</p>
+
+          <!-- add rel @asiamoth -->
+          {block:NextPage}
+          <a rel="next" href="{NextPage}">&larr; Older</a>
+          {/block:NextPage}
+          {block:PreviousPage}
+          <a rel="prev" href="{PreviousPage}">Newer &rarr;</a>
+          {/block:PreviousPage}
+
+        </nav>
+        <-- /#paging -->
+        {/block:Pagination}
+
+      </section>
+      <!-- #main -->
+
+      <!-- change section to aside @asiamoth -->
+      <!-- #myLikes -->
+      <aside id="myLikes">
+
+        <!-- add h1 @asiamoth -->
+        <h1>Link</h1>
+
+        <section class="search">
+
+          <!-- add h2 @asiamoth -->
+          <h2>Search</h2>
+
+          <!-- del @asiamoth
+            <form id="searchForm" action="/search" method="get">
+            <input id="searchField" type="text" name="q" value="{SearchQuery}" />
+            </form>
+            -->
+
+          <!-- change @asiamoth -->
+          <!-- SiteSearch Google Start -->
+          <script src="http://www.google.com/jsapi"></script>
+          <script src="http://static.tumblr.com/i7vkogx/cs1lh3pif/googlecse.js"></script>
+          <form action="http://www.google.com/cse" id="cse-search-box">
+            <div>
+              <input name="cx" value="010918636379308779660:0wacv68-nzk" type="hidden" />
+              <input name="ie" value="UTF-8" type="hidden">
+              <input style="border: 1px solid rgb(126, 157, 185); padding: 2px; background: url(&quot;http://www.google.com/cse/intl/ja/images/google_custom_search_watermark.gif&quot;) no-repeat scroll left center rgb(255, 255, 255);" name="q" size="20" id="q" class="edit" type="text">
+              <input name="sa" value="検索" class="button" type="submit">
+            </div>
+          </form>
+          <script src="http://www.google.com/cse/brand?form=cse-search-box&amp;lang=ja"></script>
+
+          <!--
+            <p><object data="http://asiamoth.com/mt/modules/google_sitesearch.php" type="text/html" width="400" height="80" style="width:400px;height:80px">[SiteSearch Google]</object></p>
+            -->
+          <!-- SiteSearch Google End -->
+
+        </section>
+        <!-- /.search -->
+
+        <nav>
+          <!-- add h2 @asiamoth -->
+          <h2>Navigation</h2>
+
+          <!-- del block:Likes @asiamoth --><!-- del block:Following @asiamoth -->
+
+          <ul>
+            {block:AskEnabled}<li><a href="/ask">{AskLabel}</a></li>{/block:AskEnabled}
+            <!-- add class @asiamoth -->
+            <li class="archive"><a href="/archive">Archive</a></li>
+            <li class="mobile"><a href="/mobile">Mobile</a></li>
+
+            <!-- change @asiamoth -->
+            <li class="feed"><a href="http://feeds.asiamoth.com/asiamoth/memo">RSS</a></li>
+          </ul>
+        </nav>
+
+<!-- add footer @asiamoth -->
+        <footer>
+          <ul>
+            <li class="powered">Powered by <a href="http://www.tumblr.com">Tumblr</a>.</li>
+            <li class="themeby">Theme by <a href="http://scott.dowding.ca/generic-html5-theme">Scott</a>.</li>
+            <li class="html5logo"><a href="http://www.w3.org/html/logo/"><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></li>
+          </ul>
+        </footer>
+      </aside>
+      <!-- /myLikes -->
+
+    </div>
+    <!-- /#container -->
+
+    <!-- add autopagerize class @asiamoth -->
+    <footer class="autopagerize_insert_before">
+    </footer>
+
+    <!-- del block:IfDisqusShortname @asiamoth -->
+
+    <!--[if lt IE 7]>
+      <script src="https://github.com/mphillips/html5-boilerplate/raw/master/js/libs/dd_belatedpng.js"></script>
+	  <script>
+      DD_belatedPNG.fix('img, .reblogged, .tagged, .notes, #searchField');
+	  </script>
+      <![endif]-->
+
+    <!-- add @asiamoth -->
+    <script src="http://static.tumblr.com/i7vkogx/Jsplgsuor/google-analytics_ua-65769-6.js"></script>
+  </body>
+</html>
