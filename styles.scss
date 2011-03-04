@@ -1,29 +1,29 @@
 @charset "UTF-8";
 
+/* ------------------------------------
+ * original: http://www.tumblr.com/theme/9731
+ ----------------------------------- */
 // todo:
 // mark color
 // body => text-shadow
 
-// ------------------------------------
-// default style
-// ------------------------------------
+//// default scss
 @import "default";
 
-//// reset
+//// reset styles
 @import "html5reset-1.6.1";
-/* html5doctor.com Reset Stylesheet
- * END*/
 
-// ------------------------------------
-// current style
-// ------------------------------------
-/* add reset css @asiamoth
- * begin */
-/* (orig.: http://yui.yahooapis.com/2.8.2r1/build/fonts/fonts.css) */
+/* ------------------------------------
+ * END: html5doctor.com Reset Stylesheet
+ ------------------------------------ */
+
+/* ------------------------------------
+ * BEGIN: add reset styles
+ * (original: http://yui.yahooapis.com/2.8.2r1/build/fonts/fonts.css )
+ ----------------------------------- */
 
 html body {
   @include default-font;
-  color: $shikkoku;
 
   &.lte7 {
 	font-size: small;
@@ -43,17 +43,14 @@ html body {
 	}
   }
 }
-/* add reset @asiamoth
- * END */
 
-/* orig.: http://www.tumblr.com/theme/9731 */
+/* ------------------------------------
+ * END: add reset styles
+ ----------------------------------- */
 
-.clearfix,
-#container,
-article,
-section#myLikes {
-  @include clearfix;
-}
+/* ------------------------------------
+ * BEGIN: elements
+ ----------------------------------- */
 
 body {
   background: {
@@ -61,18 +58,25 @@ body {
 	attachment: fixed;
 	color: $kiiro;
   }
+  color: $shikkoku;
 }
 
 a {
+  color: $kokihi;
   margin-right: 2px;
+
   &:visited {
 	color: $wakamurasaki;
   }
+
   &:hover {
 	color: $shironeri;
-	background-color: $shikkoku;}
+	background-color: $shikkoku;
+  }
+
   img {
 	vertical-align: bottom;
+	background-color: $shiro;
 	border-style:none;
   }
 }
@@ -85,15 +89,6 @@ nav ul {
   padding-top: 1em;
   border-top: 1px solid $urahayanagi;
   margin: 1em 0;
-}
-
-h1 a {
-  text-decoration: none;
-  // color: $kokihi;
-  &:visited {
-	text-decoration: none;
-	//color: $kokihi;
-  }
 }
 
 code {
@@ -116,26 +111,65 @@ p.small {
   font-size: $font10px;
 }
 
-#banner, #container {
+/* ------------------------------------
+ * END: elements
+ ----------------------------------- */
+
+/* ------------------------------------
+ * BEGIN: layout
+ ----------------------------------- */
+
+// .clearfix,
+#container,
+article,
+section#links {
+  @include clearfix;
+}
+
+
+.lte6 {
+  /* IE: centering */
+  text-align: center;
+
+  #banner, #container, #footer {
+	text-align: left;
+  }
+}
+
+#banner {
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+#container {
   width: 960px;
   overflow: hidden;
   margin: 0 auto;
 }
 
-#info, #main, #myLikes {
+#info, #main, #links {
   @include float(left);
   overflow: hidden;
   margin: 0 10px;
 }
 
 #banner {
+  //border-bottom: 2px solid $shikkoku;
+  background: $kokihi;
+  @include box-shadow(0px 0px 4px 0px rgba($kokihi, 0.8) );
 
   header {
 	margin-bottom: 0px;
-	width: 100%;
+	width: 960px;
+	//margin: 0 auto;
 	padding: 0;
-	border-bottom: 2px solid $shikkoku;
-	background: $kokihi;
+  }
+
+  h1, .description {
+	@include float(left);
+	margin: 0 10px;
+	width: 460px;
   }
 
   h1 {
@@ -145,6 +179,8 @@ p.small {
 	font: #{$font13px}/1 $sans-serif;
   }
   a {
+	text-decoration: none;
+	text-shadow: rgba(0, 0, 0, 1) 4px 2px 0;
 	color: $shiro;
 	&:visited {
 	  color: $shiro;
@@ -153,23 +189,17 @@ p.small {
 	  color: $shiro;
 	}
   }
-  h1, h2 {
-	@include float(left);
-	margin: 0 10px;
-	width: 460px;
-  }
-  h1 a {
-	text-shadow: rgba(0, 0, 0, 1) 4px 2px 0;
-  }
 }
 
 #main {
   width: 535px;
   // add @asiamoth
   article {
-	background: $shiro;
+	background-color: $shiro;
 	margin-bottom: 1em;
 	border: 1px solid $urahayanagi;
+	@include box-shadow(0px 1px 2px 0px rgba($urahayanagi, 0.8) );
+
 	padding: 1em;
 	header {
 	  p {
@@ -180,10 +210,10 @@ p.small {
 		margin: 0 0 1em;
 		a {
 		  text-decoration: none;
-		  color: $ginnezu;
+		  //color: $ginnezu;
 		  &:visited {
 			text-decoration: none;
-			color: $wakamurasaki;
+			//color: $wakamurasaki;
 		  }
 		}
 	  }
@@ -369,10 +399,8 @@ p.small {
   font: $font10px $sans-serif;
 
   nav {
-	ul {
-	  a {
-		text-decoration: none;
-	  }
+	a {
+	  text-decoration: none;
 	}
 	li {
 	  margin: 0 0 2px 20px;
@@ -382,22 +410,14 @@ p.small {
 
 #paging {
   text-align: center;
-  margin: 60px auto;
+  margin: 20px auto;
 }
 
-#myLikes {
+#links {
   width: 160px;
   font-family: $sans-serif;
   h1 {
 	margin-bottom: 5px;
-  }
-  #searchField {
-	font-size: $font10px;
-	border: 1px solid $urahayanagi;
-	width: 134px;
-	@include round(12px);
-	background: white url('http://static.tumblr.com/pwgidgy/jbel15m9e/search.png') no-repeat 2px center;
-	padding: 4px 4px 4px 20px;
   }
   li {
 	list-style: none;
@@ -435,12 +455,13 @@ p.small {
   }
 }
 
-body>footer {
-  border-bottom: 3em solid $kokihi;
-}
-
-a {
-  color: $kokihi;
+#searchField {
+  font-size: $font10px;
+  border: 1px solid $urahayanagi;
+  width: 134px;
+  @include round(12px);
+  background: white url('http://static.tumblr.com/pwgidgy/jbel15m9e/search.png') no-repeat 2px center;
+  padding: 4px 4px 4px 20px;
 }
 
 article {
@@ -455,7 +476,7 @@ article {
   }
 }
 
-#myLikes {
+#links {
   blockquote, p, li:last-child {
 	margin: 0;
   }
@@ -467,51 +488,49 @@ article {
 
 /* add @asiamoth */
 
-
 #main > h1,
 #info > h1,
-#myLikes > h1,
-#myLikes .search > h2,
-#myLikes nav > h2 {
+#links > h1,
+#links .search > h2,
+#links nav > h2 {
   @include hide;
 }
 
 
-body.lte8 {
-  #main {
-	article.quote blockquote > div {
-	  /* IE だけ引用符の分がズレる */
-	  margin-left: 0;
+.lte8 {
+  blockquote > div {
+	/* IE だけ引用符の分がズレる */
+	margin-left: 0;
+  }
+}
+
+.lte7 {
+  blockquote > div {
+	&:before { content: "“";
+	}
+	&:after  { content: "”";
 	}
   }
 }
 
-body.lte7 {
-  #main {
-	article.quote {
-	  blockquote > div {
-		text-indent: -0.5em;
-		&:before { content: "“";
-		}
-		&:after  { content: "”";
-		}
-	  }
-	}
-  }
-}
-
-body>footer {
+#footer {
   background: none repeat scroll 0 0 $kokihi;
+  @include box-shadow(2px 0px 0px 0px rgba($kokihi, 0.8) );
   margin-top: 0px;
   width: 100%;
+  height: 40px;
   padding: 0;
-  border-top: 2px solid $shikkoku;
+  // border-top: 2px solid $shikkoku;
 }
 
 /* http://hail2u.posterous.com/40908624 */
 @media screen and (max-width: 960px) {
-  #banner, #container, #info, #main, #myLikes {
+  #banner, #container, #info, #main, #links {
 	margin: 0;
 	width: 100%;
   }
 }
+
+/* ------------------------------------
+ * END: layout
+ ----------------------------------- */

@@ -2,11 +2,12 @@
 
 Tumblr のテーマを HTML5 で組んでみます！
 
+注意: 現在のところ、Google Analytics や Feed などのコードが asiamoth（自分）専用になっています。そのままの状態では使えません。
+
 ## 各ファイルの説明
 
 * <a href="https://github.com/asiamoth/Tumblr-HTML5-theme/blob/master/template.html">template.html</a>
     * Tumblr に設定する テーマの中身
-    * asiamoth（私）用に書かれた内容があるので注意！（feed の URL など）
         * <a href="https://github.com/asiamoth/Tumblr-HTML5-theme/blob/master/output.html">output.html</a>
             * 実際に出力した結果（おもにデバッグ用）
 * <a href="https://github.com/asiamoth/Tumblr-HTML5-theme/blob/master/styles.scss">styles.scss</a>

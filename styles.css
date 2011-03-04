@@ -1,4 +1,7 @@
 @charset "UTF-8";
+/* ------------------------------------
+ * original: http://www.tumblr.com/theme/9731
+ ----------------------------------- */
 /* 
 html5doctor.com Reset Stylesheet
 v1.6.1
@@ -78,14 +81,15 @@ hr {
 input, select {
   vertical-align: middle; }
 
-/* html5doctor.com Reset Stylesheet
- * END*/
-/* add reset css @asiamoth
- * begin */
-/* (orig.: http://yui.yahooapis.com/2.8.2r1/build/fonts/fonts.css) */
+/* ------------------------------------
+ * END: html5doctor.com Reset Stylesheet
+ ------------------------------------ */
+/* ------------------------------------
+ * BEGIN: add reset styles
+ * (original: http://yui.yahooapis.com/2.8.2r1/build/fonts/fonts.css )
+ ----------------------------------- */
 html body {
-  font: 13px/1.231 "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "MS PGothic", sans-serif;
-  color: #0d0015; }
+  font: 13px/1.231 "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "MS PGothic", sans-serif; }
   html body.lte7 {
     font-size: small; }
   html body select, html body input, html body button, html body textarea, html body button {
@@ -99,37 +103,20 @@ html body {
     html body pre.lte7, html body code.lte7, html body kbd.lte7, html body samp.lte7, html body tt.lte7 {
       font-size: 108%; }
 
-/* add reset @asiamoth
- * END */
-/* orig.: http://www.tumblr.com/theme/9731 */
-.lte7 .clearfix, .lte7
-#container, .lte7
-article, .lte7
-section#myLikes {
-  zoom: 1; }
-.clearfix:before, .clearfix:after,
-#container:before,
-#container:after,
-article:before,
-article:after,
-section#myLikes:before,
-section#myLikes:after {
-  display: block;
-  height: 0;
-  visibility: hidden;
-  content: "\0020"; }
-.clearfix:after,
-#container:after,
-article:after,
-section#myLikes:after {
-  clear: both; }
-
+/* ------------------------------------
+ * END: add reset styles
+ ----------------------------------- */
+/* ------------------------------------
+ * BEGIN: elements
+ ----------------------------------- */
 body {
   background-repeat: repeat-x;
   background-attachment: fixed;
-  background-color: #ffd900; }
+  background-color: #ffd900;
+  color: #0d0015; }
 
 a {
+  color: #c9171e;
   margin-right: 2px; }
   a:visited {
     color: #bc64a4; }
@@ -138,6 +125,7 @@ a {
     background-color: #0d0015; }
   a img {
     vertical-align: bottom;
+    background-color: white;
     border-style: none; }
 
 q {
@@ -147,11 +135,6 @@ nav ul {
   padding-top: 1em;
   border-top: 1px solid #c1d8ac;
   margin: 1em 0; }
-
-h1 a {
-  text-decoration: none; }
-  h1 a:visited {
-    text-decoration: none; }
 
 code {
   font-family: "Courier", "Consolas", "Courier New", monospace; }
@@ -169,47 +152,88 @@ strong {
 p.small {
   font-size: 77%; }
 
-#banner, #container {
+/* ------------------------------------
+ * END: elements
+ ----------------------------------- */
+/* ------------------------------------
+ * BEGIN: layout
+ ----------------------------------- */
+.lte7 #container, .lte7
+article, .lte7
+section#links {
+  zoom: 1; }
+#container:before, #container:after,
+article:before,
+article:after,
+section#links:before,
+section#links:after {
+  display: block;
+  height: 0;
+  visibility: hidden;
+  content: "\0020"; }
+#container:after,
+article:after,
+section#links:after {
+  clear: both; }
+
+.lte6 {
+  /* IE: centering */
+  text-align: center; }
+  .lte6 #banner, .lte6 #container, .lte6 #footer {
+    text-align: left; }
+
+#banner {
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto; }
+
+#container {
   width: 960px;
   overflow: hidden;
   margin: 0 auto; }
 
-#info, #main, #myLikes {
+#info, #main, #links {
   float: left;
   display: inline;
   overflow: hidden;
   margin: 0 10px; }
 
-#banner header {
-  margin-bottom: 0px;
-  width: 100%;
-  padding: 0;
-  border-bottom: 2px solid #0d0015;
-  background: #c9171e; }
-#banner h1 {
-  font: 197%/1.5 "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
-#banner .description {
-  font: 100%/1 "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "MS PGothic", sans-serif; }
-#banner a {
-  color: white; }
-  #banner a:visited {
+#banner {
+  background: #c9171e;
+  -moz-box-shadow: 0px 0px 4px 0px rgba(201, 23, 30, 0.8);
+  -webkit-box-shadow: 0px 0px 4px 0px rgba(201, 23, 30, 0.8);
+  box-shadow: 0px 0px 4px 0px rgba(201, 23, 30, 0.8); }
+  #banner header {
+    margin-bottom: 0px;
+    width: 960px;
+    padding: 0; }
+  #banner h1, #banner .description {
+    float: left;
+    display: inline;
+    margin: 0 10px;
+    width: 460px; }
+  #banner h1 {
+    font: 197%/1.5 "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
+  #banner .description {
+    font: 100%/1 "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "MS PGothic", sans-serif; }
+  #banner a {
+    text-decoration: none;
+    text-shadow: black 4px 2px 0;
     color: white; }
-  #banner a:hover {
-    color: white; }
-#banner h1, #banner h2 {
-  float: left;
-  display: inline;
-  margin: 0 10px;
-  width: 460px; }
-#banner h1 a {
-  text-shadow: black 4px 2px 0; }
+    #banner a:visited {
+      color: white; }
+    #banner a:hover {
+      color: white; }
 
 #main {
   width: 535px; }
   #main article {
-    background: white;
+    background-color: white;
     margin-bottom: 1em;
     border: 1px solid #c1d8ac;
+    -moz-box-shadow: 0px 1px 2px 0px rgba(193, 216, 172, 0.8);
+    -webkit-box-shadow: 0px 1px 2px 0px rgba(193, 216, 172, 0.8);
+    box-shadow: 0px 1px 2px 0px rgba(193, 216, 172, 0.8);
     padding: 1em; }
     #main article header p {
       display: block;
@@ -218,11 +242,9 @@ p.small {
       color: #afafb0;
       margin: 0 0 1em; }
       #main article header p a {
-        text-decoration: none;
-        color: #afafb0; }
+        text-decoration: none; }
         #main article header p a:visited {
-          text-decoration: none;
-          color: #bc64a4; }
+          text-decoration: none; }
     #main article header h1 {
       font: 123.1% "Helvetica Neue", "Helvetica", "Arial", sans-serif;
       line-height: 1;
@@ -362,63 +384,58 @@ p.small {
 #info {
   width: 160px;
   font: 77% "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "MS PGothic", sans-serif; }
-  #info nav ul a {
+  #info nav a {
     text-decoration: none; }
   #info nav li {
     margin: 0 0 2px 20px; }
 
 #paging {
   text-align: center;
-  margin: 60px auto; }
+  margin: 20px auto; }
 
-#myLikes {
+#links {
   width: 160px;
   font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "MS PGothic", sans-serif; }
-  #myLikes h1 {
+  #links h1 {
     margin-bottom: 5px; }
-  #myLikes #searchField {
-    font-size: 77%;
-    border: 1px solid #c1d8ac;
-    width: 134px;
-    border-radius: 12px;
-    -moz-border-radius: 12px;
-    -webkit-border-radius: 12px;
-    background: white url("http://static.tumblr.com/pwgidgy/jbel15m9e/search.png") no-repeat 2px center;
-    padding: 4px 4px 4px 20px; }
-  #myLikes li {
+  #links li {
     list-style: none;
     font-size: 77%;
     margin: 0 0 1em; }
-    #myLikes li img {
+    #links li img {
       max-width: 160px;
       background: white; }
-    #myLikes li.html5logo {
+    #links li.html5logo {
       /* IE start */
       line-height: 0;
       vertical-align: bottom;
       font-size: 0;
       /* IE end */ }
-      #myLikes li.html5logo img {
+      #links li.html5logo img {
         background: transparent; }
-    #myLikes li.like_post .post_info_top {
+    #links li.like_post .post_info_top {
       display: block !important;
       font-size: 100%;
       color: #0d0015;
       margin-bottom: 10px;
       border-bottom: 1px solid #c1d8ac;
       padding: 5px 0; }
-      #myLikes li.like_post .post_info_top a {
+      #links li.like_post .post_info_top a {
         color: #0d0015;
         text-decoration: none;
         font-weight: 700; }
-  #myLikes #following li {
+  #links #following li {
     display: inline; }
 
-body > footer {
-  border-bottom: 3em solid #c9171e; }
-
-a {
-  color: #c9171e; }
+#searchField {
+  font-size: 77%;
+  border: 1px solid #c1d8ac;
+  width: 134px;
+  border-radius: 12px;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  background: white url("http://static.tumblr.com/pwgidgy/jbel15m9e/search.png") no-repeat 2px center;
+  padding: 4px 4px 4px 20px; }
 
 article.answer {
   font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "MS PGothic", sans-serif; }
@@ -427,15 +444,15 @@ article header time, article.answer div.by {
 article footer ul {
   margin: 0; }
 
-#myLikes blockquote, #myLikes p, #myLikes li:last-child {
+#links blockquote, #links p, #links li:last-child {
   margin: 0; }
 
 /* add @asiamoth */
 #main > h1,
 #info > h1,
-#myLikes > h1,
-#myLikes .search > h2,
-#myLikes nav > h2 {
+#links > h1,
+#links .search > h2,
+#links nav > h2 {
   height: 0;
   width: 0;
   overflow: hidden;
@@ -443,33 +460,38 @@ article footer ul {
   z-index: -1; }
   .lte5 #main > h1, .lte5
   #info > h1, .lte5
-  #myLikes > h1, .lte5
-  #myLikes .search > h2, .lte5
-  #myLikes nav > h2 {
+  #links > h1, .lte5
+  #links .search > h2, .lte5
+  #links nav > h2 {
     display: none;
     padding-top: 0px;
     zoom: 1; }
 
-body.lte8 #main article.quote blockquote > div {
+.lte8 blockquote > div {
   /* IE だけ引用符の分がズレる */
   margin-left: 0; }
 
-body.lte7 #main article.quote blockquote > div {
-  text-indent: -0.5em; }
-  body.lte7 #main article.quote blockquote > div:before {
-    content: "“"; }
-  body.lte7 #main article.quote blockquote > div:after {
-    content: "”"; }
+.lte7 blockquote > div:before {
+  content: "“"; }
+.lte7 blockquote > div:after {
+  content: "”"; }
 
-body > footer {
+#footer {
   background: none repeat scroll 0 0 #c9171e;
+  -moz-box-shadow: 2px 0px 0px 0px rgba(201, 23, 30, 0.8);
+  -webkit-box-shadow: 2px 0px 0px 0px rgba(201, 23, 30, 0.8);
+  box-shadow: 2px 0px 0px 0px rgba(201, 23, 30, 0.8);
   margin-top: 0px;
   width: 100%;
-  padding: 0;
-  border-top: 2px solid #0d0015; }
+  height: 40px;
+  padding: 0; }
 
 /* http://hail2u.posterous.com/40908624 */
 @media screen and (max-width: 960px) {
-  #banner, #container, #info, #main, #myLikes {
+  #banner, #container, #info, #main, #links {
     margin: 0;
     width: 100%; } }
+
+/* ------------------------------------
+ * END: layout
+ ----------------------------------- */
