@@ -1,11 +1,14 @@
 @charset "UTF-8";
 
 /* ------------------------------------
- * original: http://www.tumblr.com/theme/9731
+    original: http://www.tumblr.com/theme/9731
  ----------------------------------- */
+
+// † template.html の CSS バージョンを更新すること †
+
 // todo:
-// mark color
-// body => text-shadow
+// body に text-shadow？
+// #info, #links と #header がくっつきすぎ？
 
 //// default scss
 @import "default";
@@ -14,12 +17,12 @@
 @import "html5reset-1.6.1";
 
 /* ------------------------------------
- * END: html5doctor.com Reset Stylesheet
+  END: html5doctor.com Reset Stylesheet
  ------------------------------------ */
 
 /* ------------------------------------
- * BEGIN: add reset styles
- * (original: http://yui.yahooapis.com/2.8.2r1/build/fonts/fonts.css )
+  BEGIN: add reset styles
+  (original: http://yui.yahooapis.com/2.8.2r1/build/fonts/fonts.css )
  ----------------------------------- */
 
 html body {
@@ -45,11 +48,11 @@ html body {
 }
 
 /* ------------------------------------
- * END: add reset styles
+  END: add reset styles
  ----------------------------------- */
 
 /* ------------------------------------
- * BEGIN: elements
+  BEGIN: elements
  ----------------------------------- */
 
 body {
@@ -105,18 +108,23 @@ em {
 }
 
 strong {
-  font-weight: 900;}
+  font-weight: 900;
+}
 
 p.small {
   font-size: $font10px;
 }
 
+mark {
+  color: $tamagoiro;
+}
+
 /* ------------------------------------
- * END: elements
+  END: elements
  ----------------------------------- */
 
 /* ------------------------------------
- * BEGIN: layout
+  BEGIN: layout
  ----------------------------------- */
 
 // .clearfix,
@@ -259,20 +267,29 @@ section#links {
 		display: inline;
 		color: $ginnezu;
 		margin: 0 4px 0 0;
+		background: #fff url('http://static.tumblr.com/i7vkogx/meblhoggu/csg-4d748e4433eb4.png') no-repeat top left;
+		.lte6 & {
+		  background: #fff url('http://static.tumblr.com/i7vkogx/4vDlhogxr/csg-4d749037e5c52.gif') no-repeat top left;
+		}
 		&.reblogged, &.notes, &.tagged {
 		  padding-left: 18px;
 		  padding-bottom: 4px;
 		  line-height: 20px;
-		  background-repeat: no-repeat;
+		  //background-repeat: no-repeat;
+		  width: 16px;
+		  height: 16px;
 		}
 		&.reblogged {
-		  background-image: url('http://static.tumblr.com/pwgidgy/xKal11o10/reblog.png');
+		  //background-image: url('http://static.tumblr.com/pwgidgy/xKal11o10/reblog.png');
+		  background-position: 0 0;
 		}
 		&.notes {
-		  background-image: url('http://static.tumblr.com/pwgidgy/1n1l11n7i/notes.png');
+		  //background-image: url('http://static.tumblr.com/pwgidgy/1n1l11n7i/notes.png');
+		  background-position: 0px -24px;
 		}
 		&.tagged {
-		  background-image: url('http://static.tumblr.com/pwgidgy/XgAl11o29/tags.png');
+		  // background-image: url('http://static.tumblr.com/pwgidgy/XgAl11o29/tags.png');
+		  background-position: 0px -48px;
 		  a {
 			&:after {
 			  content: ",";
@@ -397,6 +414,13 @@ section#links {
 #info {
   width: 160px;
   font: $font10px $sans-serif;
+  background: $kiiro url('http://static.tumblr.com/i7vkogx/meblhoggu/csg-4d748e4433eb4.png') no-repeat 0 -168px;
+  .lte6 & {
+	background: $kiiro url('http://static.tumblr.com/i7vkogx/4vDlhogxr/csg-4d749037e5c52.gif') no-repeat 0 -168px;
+  }
+  div{
+	margin-top: 128px + 16px;
+  }
 
   nav {
 	a {
@@ -430,9 +454,15 @@ section#links {
 	}
 
 	&.html5logo {
-	  @include list-img;
-	  img {
-		background: transparent;
+	  background: $kiiro url('http://static.tumblr.com/i7vkogx/meblhoggu/csg-4d748e4433eb4.png') no-repeat 0 -96px;
+	  width: 165px;
+	  height: 64px;
+	  .lte6 & {
+		background: $kiiro url('http://static.tumblr.com/i7vkogx/4vDlhogxr/csg-4d749037e5c52.gif') no-repeat 0 -96px;
+	  }
+	  a{
+		margin-top: 64px;
+		position: absolute;
 	  }
 	}
 
@@ -460,7 +490,10 @@ section#links {
   border: 1px solid $urahayanagi;
   width: 134px;
   @include round(12px);
-  background: white url('http://static.tumblr.com/pwgidgy/jbel15m9e/search.png') no-repeat 2px center;
+  //background: white url('http://static.tumblr.com/pwgidgy/jbel15m9e/search.png') no-repeat 2px center;
+  background: #fff url('http://static.tumblr.com/i7vkogx/meblhoggu/csg-4d748e4433eb4.png') no-repeat fixed 0 -72;
+  width: 16px;
+  height: 16px;
   padding: 4px 4px 4px 20px;
 }
 
@@ -532,5 +565,5 @@ article {
 }
 
 /* ------------------------------------
- * END: layout
+  END: layout
  ----------------------------------- */

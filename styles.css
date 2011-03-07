@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /* ------------------------------------
- * original: http://www.tumblr.com/theme/9731
+    original: http://www.tumblr.com/theme/9731
  ----------------------------------- */
 /* 
 html5doctor.com Reset Stylesheet
@@ -82,11 +82,11 @@ input, select {
   vertical-align: middle; }
 
 /* ------------------------------------
- * END: html5doctor.com Reset Stylesheet
+  END: html5doctor.com Reset Stylesheet
  ------------------------------------ */
 /* ------------------------------------
- * BEGIN: add reset styles
- * (original: http://yui.yahooapis.com/2.8.2r1/build/fonts/fonts.css )
+  BEGIN: add reset styles
+  (original: http://yui.yahooapis.com/2.8.2r1/build/fonts/fonts.css )
  ----------------------------------- */
 html body {
   font: 13px/1.231 "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "MS PGothic", sans-serif; }
@@ -104,10 +104,10 @@ html body {
       font-size: 108%; }
 
 /* ------------------------------------
- * END: add reset styles
+  END: add reset styles
  ----------------------------------- */
 /* ------------------------------------
- * BEGIN: elements
+  BEGIN: elements
  ----------------------------------- */
 body {
   background-repeat: repeat-x;
@@ -152,11 +152,14 @@ strong {
 p.small {
   font-size: 77%; }
 
+mark {
+  color: #fcd575; }
+
 /* ------------------------------------
- * END: elements
+  END: elements
  ----------------------------------- */
 /* ------------------------------------
- * BEGIN: layout
+  BEGIN: layout
  ----------------------------------- */
 .lte7 #container, .lte7
 article, .lte7
@@ -278,18 +281,22 @@ section#links:after {
         list-style: none;
         display: inline;
         color: #afafb0;
-        margin: 0 4px 0 0; }
+        margin: 0 4px 0 0;
+        background: white url("http://static.tumblr.com/i7vkogx/meblhoggu/csg-4d748e4433eb4.png") no-repeat top left; }
+        .lte6 #main article footer ul li {
+          background: white url("http://static.tumblr.com/i7vkogx/4vDlhogxr/csg-4d749037e5c52.gif") no-repeat top left; }
         #main article footer ul li.reblogged, #main article footer ul li.notes, #main article footer ul li.tagged {
           padding-left: 18px;
           padding-bottom: 4px;
           line-height: 20px;
-          background-repeat: no-repeat; }
+          width: 16px;
+          height: 16px; }
         #main article footer ul li.reblogged {
-          background-image: url("http://static.tumblr.com/pwgidgy/xKal11o10/reblog.png"); }
+          background-position: 0 0; }
         #main article footer ul li.notes {
-          background-image: url("http://static.tumblr.com/pwgidgy/1n1l11n7i/notes.png"); }
+          background-position: 0px -24px; }
         #main article footer ul li.tagged {
-          background-image: url("http://static.tumblr.com/pwgidgy/XgAl11o29/tags.png"); }
+          background-position: 0px -48px; }
           #main article footer ul li.tagged a:after {
             content: ","; }
           #main article footer ul li.tagged a:last-child:after {
@@ -383,7 +390,12 @@ section#links:after {
 
 #info {
   width: 160px;
-  font: 77% "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "MS PGothic", sans-serif; }
+  font: 77% "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "MS PGothic", sans-serif;
+  background: #ffd900 url("http://static.tumblr.com/i7vkogx/meblhoggu/csg-4d748e4433eb4.png") no-repeat 0 -168px; }
+  .lte6 #info {
+    background: #ffd900 url("http://static.tumblr.com/i7vkogx/4vDlhogxr/csg-4d749037e5c52.gif") no-repeat 0 -168px; }
+  #info div {
+    margin-top: 144px; }
   #info nav a {
     text-decoration: none; }
   #info nav li {
@@ -406,13 +418,14 @@ section#links:after {
       max-width: 160px;
       background: white; }
     #links li.html5logo {
-      /* IE start */
-      line-height: 0;
-      vertical-align: bottom;
-      font-size: 0;
-      /* IE end */ }
-      #links li.html5logo img {
-        background: transparent; }
+      background: #ffd900 url("http://static.tumblr.com/i7vkogx/meblhoggu/csg-4d748e4433eb4.png") no-repeat 0 -96px;
+      width: 165px;
+      height: 64px; }
+      .lte6 #links li.html5logo {
+        background: #ffd900 url("http://static.tumblr.com/i7vkogx/4vDlhogxr/csg-4d749037e5c52.gif") no-repeat 0 -96px; }
+      #links li.html5logo a {
+        margin-top: 64px;
+        position: absolute; }
     #links li.like_post .post_info_top {
       display: block !important;
       font-size: 100%;
@@ -434,7 +447,9 @@ section#links:after {
   border-radius: 12px;
   -moz-border-radius: 12px;
   -webkit-border-radius: 12px;
-  background: white url("http://static.tumblr.com/pwgidgy/jbel15m9e/search.png") no-repeat 2px center;
+  background: white url("http://static.tumblr.com/i7vkogx/meblhoggu/csg-4d748e4433eb4.png") no-repeat fixed 0 -72;
+  width: 16px;
+  height: 16px;
   padding: 4px 4px 4px 20px; }
 
 article.answer {
@@ -493,5 +508,5 @@ article footer ul {
     width: 100%; } }
 
 /* ------------------------------------
- * END: layout
+  END: layout
  ----------------------------------- */

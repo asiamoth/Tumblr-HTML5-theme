@@ -14,7 +14,6 @@
     <meta charset=utf-8>
     {block:Pagination}<!-- add @asiamoth -->
     <meta name="robots" content="noindex" />{/block:Pagination}
-    <meta name="if:Show Avatar" content="1"/>
 
     <!-- change @asiamoth -->
     <title>{block:PostSummary}{PostSummary} &mdash; {/block:PostSummary}{block:SearchPage}Search results for: {SearchQuery} &mdash; {/block:SearchPage}{Title}</title>
@@ -24,7 +23,7 @@
 
     <!--[if IE 6]><![endif]-->
     <!-- hosting!! @asiamoth -->
-    <link rel="stylesheet" href="https://github.com/asiamoth/Tumblr-HTML5-theme/raw/master/styles-min.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="https://github.com/asiamoth/Tumblr-HTML5-theme/raw/master/styles-min.css?v=2011-03-07_00" type="text/css" media="screen">
 
     <!-- change @asiamoth -->
     <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/asiamoth/blog" />
@@ -61,6 +60,7 @@
       <![endif]-->
 
     <!-- del @asiamoth
+      <meta name="if:Show Avatar" content="1"/>
       <meta name="color:Background" content="#f6f5ec"/>
       <meta name="color:Link" content="#ba0b00"/>
       <meta name="color:Link Visited" content="#d4674b"/>
@@ -425,7 +425,7 @@
           <ul>
             <li class="powered">Powered by <a href="http://www.tumblr.com">Tumblr</a>.</li>
             <li class="themeby">Theme by <a href="http://scott.dowding.ca/generic-html5-theme">Scott</a>.</li>
-            <li class="html5logo"><a href="http://www.w3.org/html/logo/"><img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-semantics.png" width="165" height="64" alt="HTML5 Powered with CSS3 / Styling, and Semantics" title="HTML5 Powered with CSS3 / Styling, and Semantics"></a></li>
+            <li class="html5logo"><a href="http://www.w3.org/html/logo/">HTML5 Powered with CSS3 / Styling, and Semantics</a></li>
           </ul>
         </footer>
       </aside>
@@ -444,7 +444,8 @@
 
     <!-- del block:IfDisqusShortname @asiamoth -->
 
-    <!--[if lt IE 7]>
+    <!-- stopped @asiamoth -->
+    <!--[if lt IE 1]>
       <script src="https://github.com/mphillips/html5-boilerplate/raw/master/js/libs/dd_belatedpng.js"></script>
 	  <script>
       DD_belatedPNG.fix('img, .reblogged, .tagged, .notes, #searchField');
