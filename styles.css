@@ -110,9 +110,7 @@ html body {
   BEGIN: elements
  ----------------------------------- */
 body {
-  background-repeat: repeat-x;
-  background-attachment: fixed;
-  background-color: #ffd900;
+  background: #ffd900 repeat-x fixed;
   color: #0d0015; }
 
 a {
@@ -202,7 +200,7 @@ section#links:after {
   margin: 0 10px; }
 
 #banner {
-  background: #c9171e;
+  background-color: #c9171e;
   -moz-box-shadow: 0px 0px 4px 0px rgba(201, 23, 30, 0.8);
   -webkit-box-shadow: 0px 0px 4px 0px rgba(201, 23, 30, 0.8);
   box-shadow: 0px 0px 4px 0px rgba(201, 23, 30, 0.8); }
@@ -302,15 +300,15 @@ section#links:after {
           #main article footer ul li.tagged a:last-child:after {
             content: ""; }
     #main article.quote blockquote {
-      font: 123.1% "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "ＭＳ Ｐ明朝", "MS PMincho", serif;
       border: 4px solid #afafb0;
       position: relative;
       background-color: #ebf6f7;
       -moz-border-radius: 8px;
       -webkit-border-radius: 8px;
       border-radius: 8px;
-      margin: 0;
-      padding: 1em; }
+      margin: 0 0 16px 0;
+      padding: 1em;
+      font: 123.1% "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "ＭＳ Ｐ明朝", "MS PMincho", serif; }
       #main article.quote blockquote:before {
         border-top-width: 16px;
         border-right-width: 16px;
@@ -339,9 +337,9 @@ section#links:after {
         width: 0;
         height: 0;
         content: ""; }
-      #main article.quote blockquote + p {
-        font-style: italic;
-        margin: 10px 0 1em 60px; }
+      #main article.quote blockquote:first-child, #main article.quote blockquote:first-child {
+        /* tombloo=>twitter quote で余計な divがつく…… */
+        display: inline; }
     #main article.photo div.photo {
       text-align: center;
       padding-bottom: 1em; }
@@ -349,9 +347,9 @@ section#links:after {
       margin: 0;
       padding: 1em; }
       #main article.chat p.odd {
-        background: #f3f3f3; }
+        background-color: #f3f3f3; }
     #main article.answer div.question {
-      background: #f3f3f3;
+      background-color: #f3f3f3;
       border: 5px solid #f3f3f3;
       margin: 1em 0;
       padding: 1em; }
@@ -361,6 +359,12 @@ section#links:after {
       padding: 1em; }
       #main article.answer div.answer p:last-child {
         margin-bottom: 0; }
+    #main article.answer {
+      font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "MS PGothic", sans-serif; }
+    #main article header time, #main article.answer div.by {
+      font-weight: 700; }
+    #main article footer ul {
+      margin: 0; }
     #main article.audio div.player {
       margin: 1em 0; }
     #main article header p a:visited {
@@ -372,18 +376,6 @@ section#links:after {
       font: 13px/1.231 "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "MS PGothic", sans-serif; }
     #main article li.notes mark {
       font-style: normal; }
-    #main article.quote blockquote div {
-      quotes: "\201C" "\201D" "\00AB" "\00BB"; }
-    #main article.quote blockquote > div:before {
-      content: open-quote;
-      font-weight: bold;
-      margin-left: -0.5em; }
-    #main article.quote blockquote > div:after {
-      content: close-quote;
-      font-weight: bold; }
-    #main article.quote blockquote div > div, #main article.quote blockquote div > p {
-      /* tombloo=>twitter quote で余計な divがつく…… */
-      display: inline; }
     #main article .photo a {
       /* IE */
       text-decoration: none; }
@@ -391,7 +383,8 @@ section#links:after {
 #info {
   width: 160px;
   font: 77% "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "MS PGothic", sans-serif;
-  background: #ffd900 url("http://static.tumblr.com/i7vkogx/meblhoggu/csg-4d748e4433eb4.png") no-repeat 0 -168px; }
+  background: #ffd900 url("http://static.tumblr.com/i7vkogx/meblhoggu/csg-4d748e4433eb4.png") no-repeat 0 -168px;
+  margin-top: 4px; }
   .lte6 #info {
     background: #ffd900 url("http://static.tumblr.com/i7vkogx/4vDlhogxr/csg-4d749037e5c52.gif") no-repeat 0 -168px; }
   #info div {
@@ -416,7 +409,7 @@ section#links:after {
     margin: 0 0 1em; }
     #links li img {
       max-width: 160px;
-      background: white; }
+      background-color: white; }
     #links li.html5logo {
       background: #ffd900 url("http://static.tumblr.com/i7vkogx/meblhoggu/csg-4d748e4433eb4.png") no-repeat 0 -96px;
       width: 165px;
@@ -424,7 +417,9 @@ section#links:after {
       .lte6 #links li.html5logo {
         background: #ffd900 url("http://static.tumblr.com/i7vkogx/4vDlhogxr/csg-4d749037e5c52.gif") no-repeat 0 -96px; }
       #links li.html5logo a {
-        margin-top: 64px;
+        display: block;
+        padding-top: 64px;
+        width: 165px;
         position: absolute; }
     #links li.like_post .post_info_top {
       display: block !important;
@@ -439,6 +434,8 @@ section#links:after {
         font-weight: 700; }
   #links #following li {
     display: inline; }
+  #links blockquote, #links p, #links li:last-child {
+    margin: 0; }
 
 #searchField {
   font-size: 77%;
@@ -451,16 +448,6 @@ section#links:after {
   width: 16px;
   height: 16px;
   padding: 4px 4px 4px 20px; }
-
-article.answer {
-  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "MS PGothic", sans-serif; }
-article header time, article.answer div.by {
-  font-weight: 700; }
-article footer ul {
-  margin: 0; }
-
-#links blockquote, #links p, #links li:last-child {
-  margin: 0; }
 
 /* add @asiamoth */
 #main > h1,
@@ -481,15 +468,6 @@ article footer ul {
     display: none;
     padding-top: 0px;
     zoom: 1; }
-
-.lte8 blockquote > div {
-  /* IE だけ引用符の分がズレる */
-  margin-left: 0; }
-
-.lte7 blockquote > div:before {
-  content: "“"; }
-.lte7 blockquote > div:after {
-  content: "”"; }
 
 #footer {
   background: none repeat scroll 0 0 #c9171e;

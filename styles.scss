@@ -56,11 +56,7 @@ html body {
  ----------------------------------- */
 
 body {
-  background: {
-	repeat: repeat-x;
-	attachment: fixed;
-	color: $kiiro;
-  }
+  background: $kiiro repeat-x fixed;
   color: $shikkoku;
 }
 
@@ -127,6 +123,9 @@ mark {
   BEGIN: layout
  ----------------------------------- */
 
+$image-png: url('http://static.tumblr.com/i7vkogx/meblhoggu/csg-4d748e4433eb4.png');
+$image-gif: url('http://static.tumblr.com/i7vkogx/4vDlhogxr/csg-4d749037e5c52.gif');
+
 // .clearfix,
 #container,
 article,
@@ -164,7 +163,7 @@ section#links {
 
 #banner {
   //border-bottom: 2px solid $shikkoku;
-  background: $kokihi;
+  background-color: $kokihi;
   @include box-shadow(0px 0px 4px 0px rgba($kokihi, 0.8) );
 
   header {
@@ -267,9 +266,9 @@ section#links {
 		display: inline;
 		color: $ginnezu;
 		margin: 0 4px 0 0;
-		background: #fff url('http://static.tumblr.com/i7vkogx/meblhoggu/csg-4d748e4433eb4.png') no-repeat top left;
+		background: #fff $image-png no-repeat top left;
 		.lte6 & {
-		  background: #fff url('http://static.tumblr.com/i7vkogx/4vDlhogxr/csg-4d749037e5c52.gif') no-repeat top left;
+		  background: #fff $image-gif no-repeat top left;
 		}
 		&.reblogged, &.notes, &.tagged {
 		  padding-left: 18px;
@@ -306,22 +305,42 @@ section#links {
 	  }
 	}
 	&.quote blockquote {
+	  @include bordered-speech-bubble($aijiro, $ginnezu);
+	  margin: 0 0 16px 0;
+	  padding: 1em;
 	  font: $font16px $serif;
 
-	  @include bordered-speech-bubble($aijiro, $ginnezu);
+	  &:first-child, &:first-child {
+		/* tombloo=>twitter quote で余計な divがつく…… */
+		display: inline;
+	  }
+
+	  // 何となく削除
+	  // div {
+		// quotes: $ldquo $rdquo $laquo $raquo;
+		//}
+	  // > div {
+		// &:before {
+		  // content: open-quote;
+		  // font-weight: bold;
+		  // margin-left: -0.5em;
+		  // }
+		// &:after {
+		  // content: close-quote;
+		  // font-weight: bold;
+		  // }
+		// }
 
 	  //position: relative;
 	  //background: $nyuuhaku-shoku;
 	  //@include round(10px);
 
 	  //border: none;
-	  margin: 0;
-	  padding: 1em;
-	  + p {
-		font-style: italic;
-		margin: 10px 0 1em 60px;
-	  }
-	  &:after {
+	  // + p {
+		// font-style: italic;
+		// margin: 10px 0 1em 60px;
+		// }
+	  // &:after {
 
 		//display: block;
 		//position: absolute;
@@ -333,7 +352,7 @@ section#links {
 		//border-color: transparent $nyuuhaku-shoku;
 		//border-style: solid;
 		//border-width: 0 20px 40px 0;
-	  }
+		// }
 
 	}
 	&.photo div.photo {
@@ -344,12 +363,12 @@ section#links {
 	  margin: 0;
 	  padding: 1em;
 	  &.odd {
-		background: $nyuuhaku-shoku;
+		background-color: $nyuuhaku-shoku;
 	  }
 	}
 	&.answer div {
 	  &.question {
-		background: $nyuuhaku-shoku;
+		background-color: $nyuuhaku-shoku;
 		border: 5px solid $nyuuhaku-shoku;
 		margin: 1em 0;
 		padding: 1em;
@@ -363,6 +382,17 @@ section#links {
 		}
 	  }
 	}
+
+	&.answer {
+	  font-family: $sans-serif;
+	}
+	header time, &.answer div.by {
+	  font-weight: 700;
+	}
+	footer ul {
+	  margin: 0;
+	}
+
 	&.audio div.player {
 	  margin: 1em 0;
 	}
@@ -380,28 +410,7 @@ section#links {
 	li.notes mark {
 	  font-style: normal;
 	}
-	&.quote blockquote {
-	  div {
-		quotes: $ldquo $rdquo $laquo $raquo;
-	  }
-	  > div {
-		&:before {
-		  content: open-quote;
-		  font-weight: bold;
-		  margin-left: -0.5em;
-		}
-		&:after {
-		  content: close-quote;
-		  font-weight: bold;
-		}
-	  }
-	  div > {
-		div, p {
-		  /* tombloo=>twitter quote で余計な divがつく…… */
-		  display: inline;
-		}
-	  }
-	}
+
 	.photo {
 	  a {
 		/* IE */
@@ -414,9 +423,10 @@ section#links {
 #info {
   width: 160px;
   font: $font10px $sans-serif;
-  background: $kiiro url('http://static.tumblr.com/i7vkogx/meblhoggu/csg-4d748e4433eb4.png') no-repeat 0 -168px;
+  background: $kiiro $image-png no-repeat 0 -168px;
+  margin-top: 4px;
   .lte6 & {
-	background: $kiiro url('http://static.tumblr.com/i7vkogx/4vDlhogxr/csg-4d749037e5c52.gif') no-repeat 0 -168px;
+	background: $kiiro $image-gif no-repeat 0 -168px;
   }
   div{
 	margin-top: 128px + 16px;
@@ -450,18 +460,20 @@ section#links {
 
 	img {
 	  max-width: 160px;
-	  background: $shiro;
+	  background-color: $shiro;
 	}
 
 	&.html5logo {
-	  background: $kiiro url('http://static.tumblr.com/i7vkogx/meblhoggu/csg-4d748e4433eb4.png') no-repeat 0 -96px;
+	  background: $kiiro $image-png no-repeat 0 -96px;
 	  width: 165px;
 	  height: 64px;
 	  .lte6 & {
-		background: $kiiro url('http://static.tumblr.com/i7vkogx/4vDlhogxr/csg-4d749037e5c52.gif') no-repeat 0 -96px;
+		background: $kiiro $image-gif no-repeat 0 -96px;
 	  }
 	  a{
-		margin-top: 64px;
+		display: block;
+		padding-top: 64px;
+		width: 165px;
 		position: absolute;
 	  }
 	}
@@ -483,33 +495,7 @@ section#links {
   #following li {
 	display: inline;
   }
-}
 
-#searchField {
-  font-size: $font10px;
-  border: 1px solid $urahayanagi;
-  width: 134px;
-  @include round(12px);
-  //background: white url('http://static.tumblr.com/pwgidgy/jbel15m9e/search.png') no-repeat 2px center;
-  background: #fff url('http://static.tumblr.com/i7vkogx/meblhoggu/csg-4d748e4433eb4.png') no-repeat fixed 0 -72;
-  width: 16px;
-  height: 16px;
-  padding: 4px 4px 4px 20px;
-}
-
-article {
-  &.answer {
-	font-family: $sans-serif;
-  }
-  header time, &.answer div.by {
-	font-weight: 700;
-  }
-  footer ul {
-	margin: 0;
-  }
-}
-
-#links {
   blockquote, p, li:last-child {
 	margin: 0;
   }
@@ -517,6 +503,20 @@ article {
 	// font: $font10px $helvetica;
 	// margin: 0;
   }
+
+}
+
+// 現在、この ID は使っていない
+#searchField {
+  font-size: $font10px;
+  border: 1px solid $urahayanagi;
+  width: 134px;
+  @include round(12px);
+  //background: white url('http://static.tumblr.com/pwgidgy/jbel15m9e/search.png') no-repeat 2px center;
+  background: #fff $image-png no-repeat fixed 0 -72;
+  width: 16px;
+  height: 16px;
+  padding: 4px 4px 4px 20px;
 }
 
 /* add @asiamoth */
@@ -527,23 +527,6 @@ article {
 #links .search > h2,
 #links nav > h2 {
   @include hide;
-}
-
-
-.lte8 {
-  blockquote > div {
-	/* IE だけ引用符の分がズレる */
-	margin-left: 0;
-  }
-}
-
-.lte7 {
-  blockquote > div {
-	&:before { content: "“";
-	}
-	&:after  { content: "”";
-	}
-  }
 }
 
 #footer {
