@@ -12,38 +12,15 @@ $lightblue:    rgb(207, 219, 231);
 $lightestblue: rgb(219, 231, 255);
 $yellow:       rgb(255, 222,   0);
 
-//// Traditional Japanese Color Name
-// http://2xup.org/repos/
-$aka: #e60033;
-$karakurenai: #e95464;
-$kokihi: #c9171e;
-
-$kiiro: #ffd900;
-$tamagoiro: #fcd575;
-$urahayanagi: #c1d8ac;
-
-$aijiro: #ebf6f7;
-
-$fujimurasaki: #a59aca;
-$wakamurasaki: #bc64a4;
-
-$shiro: #ffffff;
-$nyuuhaku-shoku: #f3f3f3;
-$shironeri: #f3f3f2;
-$ginnezu: #afafb0;
-$genjinezu: #888084;
-$hai-iro: #7d7d7d;
-$shikkoku: #0d0015;
-$sumi: #595857;
-
-
 //// Font Family
-$sans-serif: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "MS PGothic",sans-serif;
+$sans-serif: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic",sans-serif;
 $monospace: "Courier", "Consolas", "Courier New", monospace;
 $serif: "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "ＭＳ Ｐ明朝", "MS PMincho", serif;
-$helvetica: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+// http://stystk.com/post/499463433/use-helvetica-neue-light
+$helvetica: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", Arial, sans-serif;
 
 //// Font Size
+// http://developer.yahoo.com/yui/fonts/
 $font10px: 77%;
 $font11px: 85%;
 $font12px: 93%;
@@ -75,6 +52,7 @@ $raquo: "\00BB";
 // mixin
 // ------------------------------------
 
+// http://developer.yahoo.com/yui/fonts/
 @mixin default-font{
   font: 13px/1.231 $sans-serif;
 }
