@@ -318,11 +318,14 @@
           <!-- add @asiamoth -->
           {block:Permalink}
           <aside>
-            <!-- Rakuten Widget FROM HERE --><script src="http://static.tumblr.com/i7vkogx/S0wlgsu5y/rakutenwidgetsetting.js"></script><script src="http://xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js"></script><!-- Rakuten Widget TO HERE -->
-            <!-- X:S ZenBackWidget -->
-            <script>//<![CDATA[
+            <div id="rakutenWidget"><!-- Rakuten Widget FROM HERE --><!--
+              <script src="http://static.tumblr.com/i7vkogx/S0wlgsu5y/rakutenwidgetsetting.js"></script><script src="http://xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js"></script>
+              -->
+            </div>
+            <div id="zenBackWidget"><!-- X:S ZenBackWidget --><script>//<![CDATA[
               document.write(unescape("%3Cscript")+" src='http://widget.zenback.jp/?base_uri=http%3A//memo.asiamoth.com/&nsid=89248360359321420%3A%3A92880381199558153&rand="+Math.ceil((new Date()*1)*Math.random())+"' type='text/javascript'"+unescape("%3E%3C/script%3E"));
-              //]]></script><!-- X:E ZenBackWidget -->
+              //]]></script><!-- X:E ZenBackWidget --></div>
+
           </aside>
           {/block:Permalink}
 
@@ -454,5 +457,7 @@
 
     <!-- add @asiamoth -->
     <script src="http://static.tumblr.com/i7vkogx/Jsplgsuor/google-analytics_ua-65769-6.js"></script>
+    <script src="http://static.tumblr.com/i7vkogx/dlQlie61y/scripts.js"></script>
+
   </body>
 </html>

@@ -17,7 +17,8 @@ $sans-serif: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリ
 $monospace: "Courier", "Consolas", "Courier New", monospace;
 $serif: "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "ＭＳ Ｐ明朝", "MS PMincho", serif;
 // http://stystk.com/post/499463433/use-helvetica-neue-light
-$helvetica: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", Arial, sans-serif;
+$helvetica: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$ascii-art: "Mona","IPA MONAPGOTHIC","MS PGothic","ＭＳ Ｐゴシック","MS Pｺﾞｼｯｸ","MS Pゴシック",sans-serif;
 
 //// Font Size
 // http://developer.yahoo.com/yui/fonts/
@@ -64,7 +65,8 @@ $raquo: "\00BB";
   &:before,
   &:after {
 	display: block;
-	height: 0;
+	// height: 0;
+	height: 0.01px;  // http://hail2u.net/pub/test/199.html
 	visibility: hidden;
 	content: "\0020";
   }
