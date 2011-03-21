@@ -103,5 +103,5 @@ MY.lazy_writer = (function(){
 
 MY.rakutenWidget_url = 'http://xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js';
 MY.lazy_writer(MY.rakutenWidget_url, function(str){
-  document.getElementById(rakutenWidget).innerHTML = str;
+  document.getElementById('rakutenWidget').innerHTML = str;
 });
