@@ -4,7 +4,7 @@ rakuten_design="slide";rakuten_affiliateId="00428c50.b553f708.044c5338.caf05aa7"
 var MY = {};
 
 // http://la.ma.la/misc/js/lazy_writer/
-MY.lazy_writer = (function(){
+document.lazy_writer = (function(){
   function lazy_writer(url, callback, option){
     var session = {
     script_count  : 0,
@@ -102,6 +102,6 @@ MY.lazy_writer = (function(){
 })();
 
 MY.rakutenWidget_url = 'http://xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js';
-MY.lazy_writer(MY.rakutenWidget_url, function(str){
+document.lazy_writer(MY.rakutenWidget_url, function(str){
   document.getElementById('rakutenWidget').innerHTML = str;
 });
