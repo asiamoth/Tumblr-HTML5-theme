@@ -1,5 +1,9 @@
+// Rakuten Widget Setting
+rakuten_design="slide";rakuten_affiliateId="00428c50.b553f708.044c5338.caf05aa7";rakuten_items="ranking";rakuten_genreId="0";rakuten_size="468x160";rakuten_target="_blank";rakuten_theme="natural";rakuten_border="off";rakuten_auto_mode="off";rakuten_genre_title="off";rakuten_recommend="on";rakuten_ver="20100708";
+
 var MY = {};
 
+// http://la.ma.la/misc/js/lazy_writer/
 MY.lazy_writer = (function(){
   function lazy_writer(url, callback, option){
     var session = {
@@ -97,12 +101,7 @@ MY.lazy_writer = (function(){
   return lazy_writer;
 })();
 
-MY.rakutenWidgetSetting = 'http://static.tumblr.com/i7vkogx/S0wlgsu5y/rakutenwidgetsetting.js';
-MY.rakutenWidget = 'http://xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js';
-
-MY.lazy_writer(MY.rakutenWidgetSetting, function(str){
+MY.rakutenWidget_url = 'http://xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js';
+MY.lazy_writer(MY.rakutenWidget_url, function(str){
   document.getElementById(rakutenWidget).innerHTML = str;
-  MY.lazy_writer(MY.rakutenWidget, function(str){
-    document.getElementById(rakutenWidget).appendChild(str);
-  });
 });
