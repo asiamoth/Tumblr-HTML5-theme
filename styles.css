@@ -534,7 +534,7 @@ article:after,
   #banner h1, #banner .description {
     display: table-cell;
     vertical-align: middle;
-    margin: 8px; }
+    padding: 8px; }
     .lte7 #banner h1, .lte7 #banner .description {
       display: inline;
       zoom: 1; }
@@ -754,6 +754,8 @@ article:after,
         color: #0d0015;
         text-decoration: none;
         font-weight: 700; }
+  #links footer ul {
+    margin-bottom: 32px; }
   #links #following li {
     display: inline; }
   #links blockquote, #links p, #links li:last-child {

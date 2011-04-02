@@ -281,7 +281,7 @@ article,
 	//width: ($containerWidth / 2);
 	display: table-cell;
 	vertical-align: middle;
-	margin: $margin;
+	padding: $margin;
 
 	// http://www.yomotsu.net/wp/?p=387
 	.lte7 &{
@@ -607,6 +607,11 @@ article,
 	  }
 	}
   }
+
+  footer ul {
+	margin-bottom: 32px;
+  }
+
   #following li {
 	display: inline;
   }
