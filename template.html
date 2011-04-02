@@ -16,17 +16,17 @@
     <meta name="robots" content="noindex" />{/block:Pagination}
 
     <!-- change @asiamoth -->
-    <title>{block:PostSummary}{PostSummary} &mdash; {/block:PostSummary}{block:SearchPage}Search results for: {SearchQuery} &mdash; {/block:SearchPage}{Title}</title>
+    <title>{block:PostSummary}{PostSummary} &mdash; {/block:PostSummary}{block:SearchPage}Search results for: {SearchQuery} &mdash; {/block:SearchPage}{block:TagPage}Entries tagged with: {Tag} &mdash; {/block:TagPage}{Title}</title>
 
     <!-- change @asiamoth -->
     <meta name="description" content="{block:IndexPage}{block:Description}{MetaDescription}{/block:Description}{/block:IndexPage}{block:Permalink}{block:PostSummary}{PostSummary}{/block:PostSummary}{/block:Permalink}" />
 
     <!--[if IE 6]><![endif]-->
     <!-- hosting!! @asiamoth -->
-    <link rel="stylesheet" href="https://github.com/asiamoth/Tumblr-HTML5-theme/raw/master/styles-min.css?v=2011-03-08_00" type="text/css" media="screen">
+    <link rel="stylesheet" href="https://github.com/asiamoth/Tumblr-HTML5-theme/raw/master/styles-min.css?v=2011-04-02_00" type="text/css" media="screen">
 
     <!-- change @asiamoth -->
-    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.feedburner.com/asiamoth/blog" />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="http://feeds.asiamoth.com/asiamoth/memo" />
     <!-- add @asiamoth -->
     <meta name="google-site-verification" content="zWB1QZ9qVGt86ZqfQVYaMJybRJL7AD6dMoIOQC27C_M" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
@@ -88,6 +88,7 @@
 
         {block:Permalink}<!-- add: @asiamoth -->
         {block:PostSummary}<p class="description"><!-- zenback_title_begin -->{PostSummary}<!-- zenback_title_end --></p>{/block:PostSummary}{/block:Permalink}
+        {block:TagPage}<p class="description">Entries tagged with: {Tag}</p>{/block:TagPage}
       </header>
     </div>
     <!-- /#banner -->
@@ -143,7 +144,7 @@
           {block:Text}
           <header>
             <!-- change @asiamoth -->
-            <p><a href="{Permalink}">{block:Date}<time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}" pubdate>{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}</time>{/block:Date}</a> &bull; Text Post</p>
+            <p>Permalink: <a href="{Permalink}">{block:Date}<time pubdate datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24HourWithZero}:{Minutes}:{Seconds}+09:00">{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}</time>{/block:Date}</a> &bull; Text Post</p>
             {block:Title}
             <h1><a href="{Permalink}">{Title}</a></h1>
             {/block:Title}
@@ -156,7 +157,7 @@
 
           {block:Photo}
           <header>
-            <p><a href="{Permalink}">{block:Date}<time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}" pubdate>{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}</time>{/block:Date}</a> &bull; Photo Post</p>
+            <p>Permalink: <a href="{Permalink}">{block:Date}<time pubdate datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24HourWithZero}:{Minutes}:{Seconds}+09:00">{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}</time>{/block:Date}</a> &bull; Photo Post</p>
           </header>
 
           <!-- add @asiamoth-->
@@ -165,6 +166,10 @@
             {LinkOpenTag}
             <img src="{PhotoURL-500}" alt="{PhotoAlt}" />
             {LinkCloseTag}
+
+            <!-- add @asiamoth -->
+            {block:HighRes}<div class="highres">HighRes: <a class="highreslink" href="{PhotoURL-HighRes}">{PhotoURL-HighRes}</a></div>{/block:HighRes}
+
           </div>
 
           {block:Caption}
@@ -175,7 +180,7 @@
 
           {block:Quote}
           <header>
-            <p><a href="{Permalink}">{block:Date}<time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}" pubdate>{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}</time>{/block:Date}</a> &bull; Quote Post</p>
+            <p>Permalink: <a href="{Permalink}">{block:Date}<time pubdate datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24HourWithZero}:{Minutes}:{Seconds}+09:00">{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}</time>{/block:Date}</a> &bull; Quote Post</p>
           </header>
 
           <!-- change @asiamoth -->
@@ -190,7 +195,7 @@
 
           {block:Link}
           <header>
-            <p><a href="{Permalink}">{block:Date}<time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}" pubdate>{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}</time>{/block:Date}</a> &bull; Link Post</p>
+            <p>Permalink: <a href="{Permalink}">{block:Date}<time pubdate datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24HourWithZero}:{Minutes}:{Seconds}+09:00">{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}</time>{/block:Date}</a> &bull; Link Post</p>
             <h1><a href="{URL}" {Target}>{Name}</a></h1>
           </header>
           {block:Description}
@@ -203,7 +208,7 @@
 
           {block:Answer}
           <header>
-            <p><a href="{Permalink}">{block:Date}<time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}" pubdate>{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}</time>{/block:Date}</a> &bull; Answer Post</p>
+            <p>Permalink: <a href="{Permalink}">{block:Date}<time pubdate datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24HourWithZero}:{Minutes}:{Seconds}+09:00">{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}</time>{/block:Date}</a> &bull; Answer Post</p>
           </header>
           <!-- add @asiamoth-->
           <!-- zenback_body_begin -->
@@ -224,7 +229,7 @@
 
           {block:Chat}
           <header>
-            <p><a href="{Permalink}">{block:Date}<time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}" pubdate>{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}</time>{/block:Date}</a> &bull; Chat Post</p>
+            <p>Permalink: <a href="{Permalink}">{block:Date}<time pubdate datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24HourWithZero}:{Minutes}:{Seconds}+09:00">{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}</time>{/block:Date}</a> &bull; Chat Post</p>
             {block:Title}<h1><a href="{Permalink}">{Title}</a></h1>{/block:Title}
           </header>
           <!-- add @asiamoth-->
@@ -237,7 +242,7 @@
 
           {block:Video}
           <header>
-            <p><a href="{Permalink}">{block:Date}<time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}" pubdate>{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}</time>{/block:Date}</a> &bull; Video Post</p>
+            <p>Permalink: <a href="{Permalink}">{block:Date}<time pubdate datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24HourWithZero}:{Minutes}:{Seconds}+09:00">{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}</time>{/block:Date}</a> &bull; Video Post</p>
           </header>
           <!-- add @asiamoth-->
           <!-- zenback_body_begin -->
@@ -251,7 +256,7 @@
 
           {block:Photoset}
           <header>
-            <p><a href="{Permalink}">{block:Date}<time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}" pubdate>{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}</time>{/block:Date}</a> &bull; Photoset Post</p>
+            <p>Permalink: <a href="{Permalink}">{block:Date}<time pubdate datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24HourWithZero}:{Minutes}:{Seconds}+09:00">{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}</time>{/block:Date}</a> &bull; Photoset Post</p>
           </header>
           <!-- add @asiamoth-->
           <!-- zenback_body_begin -->
@@ -265,7 +270,7 @@
 
           {block:Audio}
           <header>
-            <p><a href="{Permalink}">{block:Date}<time datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}" pubdate>{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}</time>{/block:Date}</a> &bull; Audio Post</p>
+            <p>Permalink: <a href="{Permalink}">{block:Date}<time pubdate datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24HourWithZero}:{Minutes}:{Seconds}+09:00">{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero} {24HourWithZero}:{Minutes}</time>{/block:Date}</a> &bull; Audio Post</p>
           </header>
           <!-- add @asiamoth-->
           <!-- zenback_body_begin -->
@@ -318,14 +323,11 @@
           <!-- add @asiamoth -->
           {block:Permalink}
           <aside>
-            <div id="rakutenWidget"><!-- Rakuten Widget FROM HERE --><!--
-              <script src="http://static.tumblr.com/i7vkogx/S0wlgsu5y/rakutenwidgetsetting.js"></script><script src="http://xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js"></script>
-              -->
-            </div>
-            <div id="zenBackWidget"><!-- X:S ZenBackWidget --><script>//<![CDATA[
+            <!-- Rakuten Widget FROM HERE --><script src="http://static.tumblr.com/i7vkogx/S0wlgsu5y/rakutenwidgetsetting.js"></script><script src="http://xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js"></script><!-- Rakuten Widget TO HERE -->
+            <!-- X:S ZenBackWidget -->
+            <script>//<![CDATA[
               document.write(unescape("%3Cscript")+" src='http://widget.zenback.jp/?base_uri=http%3A//memo.asiamoth.com/&nsid=89248360359321420%3A%3A92880381199558153&rand="+Math.ceil((new Date()*1)*Math.random())+"' type='text/javascript'"+unescape("%3E%3C/script%3E"));
-              //]]></script><!-- X:E ZenBackWidget --></div>
-
+              //]]></script><!-- X:E ZenBackWidget -->
           </aside>
           {/block:Permalink}
 
@@ -421,6 +423,14 @@
             <!-- change @asiamoth -->
             <li class="feed"><a href="http://feeds.asiamoth.com/asiamoth/memo">RSS</a></li>
           </ul>
+
+          <!-- add @asiamoth -->
+          <ul class="tagged">
+            <li><a href="http://memo.asiamoth.com/tagged/%E9%AD%94%E6%B3%95%E5%B0%91%E5%A5%B3%E3%81%BE%E3%81%A9%E3%81%8B%E2%98%86%E3%83%9E%E3%82%AE%E3%82%AB">魔法少女まどか☆マギカ (PUELLA MAGI MADOKA MAGICA)</a></li>
+            <li><a href="http://memo.asiamoth.com/tagged/Evangelion" title="Ciao! I am a harsh thug.">エヴァンゲリオン (Evangelion)</a></li>
+            <li><a href="http://memo.asiamoth.com/tagged/VOCALOID" title="Ciao! I am a harsh thug.">ボーカロイド (VOCALOID)</a></li>
+          </ul>
+
         </nav>
 
         <!-- add footer @asiamoth -->
@@ -457,7 +467,5 @@
 
     <!-- add @asiamoth -->
     <script src="http://static.tumblr.com/i7vkogx/Jsplgsuor/google-analytics_ua-65769-6.js"></script>
-    <script src="http://static.tumblr.com/i7vkogx/dlQlie61y/scripts.js"></script>
-
   </body>
 </html>

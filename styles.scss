@@ -9,6 +9,12 @@
 // todo:
 // body に text-shadow？
 
+
+
+// ------------------------------------
+// Import mixins
+// ------------------------------------
+
 //// default scss
 @import "default";
 
@@ -16,13 +22,79 @@
 // http://color-japanese.rubyforge.org/examples/traditional.html
 @import "color-japanese";
 
-//// reset styles
+
+
+
+// ------------------------------------
+// Variables
+// ------------------------------------
+
+// Grid
+// ----------------
+
+$gutter: 16px;
+$column: ($gutter);
+$margin: ($gutter / 2);
+
+//// 2 columns
+$infoWidth:      ($column * 22);
+$mainWidth:      ($column * 36);
+$linksWidth:     ($column * 22);
+$containerWidth: ($infoWidth + $mainWidth + ($margin * 4));
+//$containerWidth: 960px;
+
+//// float
+$infoFloat:  "right";
+$mainFloat:  "left";
+$linksFloat: "right";
+
+//// margin
+$infoMargin:  $margin;
+$mainMargin:  $margin;
+$linksMargin: $margin;
+
+
+//// 3 columns
+//$infoWidth:      ($column * 2);
+//$mainWidth:      ($column * 8);
+//$linksWidth:     ($column * 3);
+//$containerWidth: ($infoWidth + $mainWidth + $linksWidth + ($margin * 2));
+
+//// float
+//$infoFloat:  "left";
+//$mainFloat:  "left";
+//$linksFloat: "left";
+
+
+// Font size
+// ----------------
+
+// およそ 1.6 倍ずつ拡大
+$fontSmall:  $font10px; //    77%
+$fontMiddle: $font16px; // 123.1%
+$fontLarge:  $font26px; //   197%
+
+
+// Image
+// ----------------
+
+// http://www.smushit.com/ysmush.it にて最適化 /
+$image-png: url('http://static.tumblr.com/i7vkogx/meblhoggu/csg-4d748e4433eb4.png');
+$image-gif: url('http://static.tumblr.com/i7vkogx/qHclhq1ud/_i7vkogx_4vdlhogxr_csg-4d749037e5c52.gif.png');
+
+
+// ------------------------------------
+// Reset styles
+// ------------------------------------
+
 @import "html5-reset";
 //@import "html5reset-1.6.1";
-
 /* ------------------------------------
   END: Reset Stylesheet
  ------------------------------------ */
+
+
+
 
 /* ------------------------------------
   BEGIN: add reset styles
@@ -30,7 +102,7 @@
  ----------------------------------- */
 
 html body {
-  @include default-font;
+  font: 13px/1.231 $sans-serif;
 
   &.lte7 {
 	font-size: small;
@@ -54,6 +126,9 @@ html body {
 /* ------------------------------------
   END: add reset styles
  ----------------------------------- */
+
+
+
 
 /* ------------------------------------
   BEGIN: elements
@@ -84,9 +159,10 @@ a {
   }
 
   img {
-	vertical-align: bottom;
+	border-style: none;
+	/* http://hail2u.net/blog/webdesign/ */
+	vertical-align: text-bottom;
 	background-color: $Shiro;
-	border-style:none;
   }
 }
 
@@ -96,7 +172,7 @@ q {
 
 nav ul {
   padding-top: 1em;
-  border-top: 1px solid $Urahayanagi;
+  // border-top: 1px solid $Urahayanagi;
   margin: 1em 0;
 }
 
@@ -118,7 +194,7 @@ strong {
 }
 
 p.small {
-  font-size: $font10px;
+  font-size: $fontSmall;
 }
 
 mark {
@@ -129,21 +205,25 @@ mark {
   END: elements
  ----------------------------------- */
 
+
+
+
 /* ------------------------------------
   BEGIN: layout
  ----------------------------------- */
 
-// http://www.smushit.com/ysmush.it にて最適化 /
-$image-png: url('http://static.tumblr.com/i7vkogx/meblhoggu/csg-4d748e4433eb4.png');
-$image-gif: url('http://static.tumblr.com/i7vkogx/qHclhq1ud/_i7vkogx_4vdlhogxr_csg-4d749037e5c52.gif.png');
+/* Block
+ ----------------*/
 
-// .clearfix,
+// centering
+// ----------------
+#banner header,
 #container,
-article,
-section#links {
-  @include clearfix;
+#footer footer {
+  margin: 0 auto;
+  width: $containerWidth;
+  overflow: hidden;
 }
-
 
 .lte6 {
   /* IE: centering */
@@ -154,47 +234,71 @@ section#links {
   }
 }
 
-#banner {
-  width: 100%;
-  overflow: hidden;
-  margin: 0 auto;
+// float
+// ----------------
+#info {
+  @include float($infoFloat);
+  margin: $infoMargin;
 }
 
-#container {
-  width: 960px;
-  overflow: hidden;
-  margin: 0 auto;
+#main {
+  @include float($mainFloat);
+  margin: $mainMargin;
+}
+
+#links {
+  @include float($linksFloat);
+  margin: $linksMargin;
 }
 
 #info, #main, #links {
-  @include float(left);
   overflow: hidden;
-  margin: 0 10px;
 }
+
+#container,
+article,
+#links {
+  @include clearfix;
+}
+
+/* Inner
+ ----------------*/
 
 #banner {
   //border-bottom: 2px solid $Shikkoku;
   background-color: $Kokihi;
-  @include box-shadow(0px 0px 4px 0px rgba($Kokihi, 0.8) );
+
+  // http://h2ham.seesaa.net/article/169464108.html
+  @include box-shadow(-4px 0px 4px 0px rgba($Kokihi, 0.8) );
 
   header {
 	margin-bottom: 0px;
-	width: 960px;
-	//margin: 0 auto;
 	padding: 0;
   }
 
   h1, .description {
-	@include float(left);
-	margin: 0 10px;
-	width: 460px;
+	//@include float(left);
+	//width: ($containerWidth / 2);
+	display: table-cell;
+	vertical-align: middle;
+	margin: $margin;
+
+	// http://www.yomotsu.net/wp/?p=387
+	.lte7 &{
+	  display: inline;
+	  zoom: 1
+	}
   }
 
+
+
   h1 {
-	font: #{$font26px}/1.5 $helvetica;
+	font: #{$fontLarge}/1.6 $helvetica;
+	width: $infoWidth;
   }
   .description {
-	font: #{$font13px}/1 $sans-serif;
+	font: #{$fontSmall}/1.6 $sans-serif;
+	width: $mainWidth;
   }
   a {
 	text-decoration: none;
@@ -210,7 +314,7 @@ section#links {
 }
 
 #main {
-  width: 535px;
+  width: $mainWidth;
   // add @asiamoth
   article {
 	background-color: $Shiro;
@@ -222,7 +326,7 @@ section#links {
 	header {
 	  p {
 		display: block;
-		font: $font10px $helvetica;
+		font: $fontSmall $helvetica;
 		text-transform: uppercase;
 		color: $Ginnezu;
 		margin: 0 0 1em;
@@ -237,7 +341,7 @@ section#links {
 		  //}
 	  }
 	  h1 {
-		font: $font16px $helvetica;
+		font: $fontMiddle $helvetica;
 		line-height: 1;
 		margin-top: 0;
 	  }
@@ -248,7 +352,7 @@ section#links {
 	  margin-left: 1em;
 	}
 	section.notes ol.notes {
-	  font: $font10px $sans-serif;
+	  font: $fontSmall $sans-serif;
 	  margin: 0;
 	  li {
 		list-style: none;
@@ -262,7 +366,7 @@ section#links {
 	  }
 	}
 	footer {
-	  font: $font10px $sans-serif;
+	  font: $fontSmall $sans-serif;
 	  border-top: 1px solid $NyuuhakuShoku;
 	  padding-top: 1em;
 	  a {
@@ -320,7 +424,7 @@ section#links {
 	  @include bordered-speech-bubble($Aijiro, $Ginnezu);
 	  margin: 0 0 16px 0;
 	  padding: 1em;
-	  font: $font16px $serif;
+	  font: $fontMiddle $serif;
 
 	  &:first-child, &:first-child {
 		/* tombloo=>twitter quote で余計な divがつく…… */
@@ -414,7 +518,7 @@ section#links {
 	}
 	p, blockquote p, pre {
 	  margin-bottom: 1em;
-	  font: #{$font16px}/1.6 $sans-serif;
+	  font: #{$fontMiddle}/1.6 $sans-serif;
 	}
 	p img {
 	  @include default-font;
@@ -433,10 +537,9 @@ section#links {
 }
 
 #info {
-  width: 160px;
-  font: $font10px $sans-serif;
+  width: $infoWidth;
+  font: $fontSmall $sans-serif;
   background: $KiIro $image-png no-repeat 0 -168px;
-  margin-top: 4px;
   .lte6 & {
 	background: $KiIro $image-gif no-repeat 0 -168px;
   }
@@ -460,14 +563,14 @@ section#links {
 }
 
 #links {
-  width: 160px;
+  width: $linksWidth;
   font-family: $sans-serif;
   h1 {
 	margin-bottom: 5px;
   }
   li {
 	list-style: none;
-	font-size: $font10px;
+	font-size: $fontSmall;
 	margin: 0 0 1em;
 
 	img {
@@ -492,7 +595,7 @@ section#links {
 
 	&.like_post .post_info_top {
 	  display: block !important;
-	  font-size: $font13px;
+	  font-size: $fontMiddle;
 	  color: $Shikkoku;
 	  margin-bottom: 10px;
 	  border-bottom: 1px solid $Urahayanagi;
@@ -512,7 +615,7 @@ section#links {
 	margin: 0;
   }
   .search h1 {
-	// font: $font10px $helvetica;
+	// font: $fontSmall $helvetica;
 	// margin: 0;
   }
 
@@ -520,7 +623,7 @@ section#links {
 
 // 現在、この ID は使っていない
 #searchField {
-  font-size: $font10px;
+  font-size: $fontSmall;
   border: 1px solid $Urahayanagi;
   width: 134px;
   @include round(12px);
@@ -543,9 +646,8 @@ section#links {
 
 #footer {
   background: none repeat scroll 0 0 $Kokihi;
-  @include box-shadow(2px 0px 0px 0px rgba($Kokihi, 0.8) );
+  //@include box-shadow(4px 0px 0px 0px rgba($Kokihi, 0.8) );
   margin-top: 0px;
-  width: 100%;
   height: 40px;
   padding: 0;
   // border-top: 2px solid $Shikkoku;
