@@ -1,326 +1,30 @@
 @charset "UTF-8";
 /* ------------------------------------
-    original: http://www.tumblr.com/theme/9731
+  original: http://www.tumblr.com/theme/9731
  ----------------------------------- */
-[hidden], area, base, basefont, command, datalist, head, input[type=hidden], link, menu[type=context], meta, noembed, noframes, param, rp, script, source, style, title {
-  display: none; }
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  border-style: outset;
-  display: table;
-  font-size: initial;
-  font-style: initial;
-  font-variant: initial;
-  font-weight: initial;
-  line-height: initial;
-  text-align: initial;
-  white-space: initial; }
-
-caption {
-  display: table-caption; }
-
-colgroup {
-  display: table-column-group; }
-
-col {
-  display: table-column; }
-
-thead {
-  display: table-header-group; }
-
-tbody {
-  display: table-row-group; }
-
-tfoot {
-  display: table-footer-group; }
-
-tr {
-  display: table-row; }
-
-td, th {
-  border-style: inset;
-  display: table-cell;
-  padding: 1px; }
-
-li {
-  display: list-item; }
-
-ruby {
-  display: ruby; }
-
-rt {
-  display: ruby-text; }
-
-blockquote, dir, dl, figure, listing, menu, ol, p, plaintext, pre, ul, xmp {
-  margin-bottom: 1em;
-  margin-top: 1em; }
-
-dir dir, dir dl, dir menu, dir ol, dir ul, dl dir, dl dl, dl menu, dl ol, dl ul, menu dir, menu dl, menu menu, menu ol, menu ul, ol dir, ol dl, ol menu, ol ol, ol ul, ul dir, ul dl, ul menu, ul ol, ul ul {
-  margin-bottom: 0;
-  margin-top: 0; }
-
-h1 {
-  font-size: 2em;
-  font-weight: 700;
-  margin-bottom: .67em;
-  margin-top: .67em; }
-
-h2 {
-  font-size: 1.5em;
-  font-weight: 700;
-  margin-bottom: .83em;
-  margin-top: .83em; }
-
-h3 {
-  font-size: 1.17em;
-  font-weight: 700;
-  margin-bottom: 1em;
-  margin-top: 1em; }
-
-h4 {
-  font-size: 1em;
-  font-weight: 700;
-  margin-bottom: 1.33em;
-  margin-top: 1.33em; }
-
-h5 {
-  font-size: .83em;
-  font-weight: 700;
-  margin-bottom: 1.67em;
-  margin-top: 1.67em; }
-
-h6 {
-  font-size: .67em;
-  font-weight: 700;
-  margin-bottom: 2.33em;
-  margin-top: 2.33em; }
-
-dd {
-  margin-left: 40px; }
-
-details > dd, figure > dd {
-  margin-left: 0; }
-
-dir, menu, ol, ul {
-  padding-left: 40px; }
-
-blockquote, figure {
-  margin-left: 40px;
-  margin-right: 40px; }
-
-form {
-  margin-bottom: 1em; }
-
-tr, td, th {
-  vertical-align: inherit; }
-
-sub {
-  vertical-align: sub; }
-
-sup {
-  vertical-align: super; }
-
-caption[align=bottom] {
-  caption-side: bottom; }
-
-p[align=left], h1[align=left], h2[align=left], h3[align=left], h4[align=left], h5[align=left], h6[align=left] {
-  text-align: left; }
-
-p[align=right], h1[align=right], h2[align=right], h3[align=right], h4[align=right], h5[align=right], h6[align=right] {
-  text-align: right; }
-
-p[align=justify], h1[align=justify], h2[align=justify], h3[align=justify], h4[align=justify], h5[align=justify], h6[align=justify] {
-  text-align: justify; }
-
-address, cite, dfn, em, i, var {
-  font-style: italic; }
-
-b, strong, th {
-  font-weight: 700; }
-
-code, kbd, listing, plaintext, pre, samp, tt, xmp {
-  font-family: monospace; }
-
-big {
-  font-size: larger; }
-
-small, sub, sup {
-  font-size: smaller; }
-
-sub, sup {
-  line-height: normal; }
-
-:link {
-  color: blue; }
-
-:visited {
-  color: purple; }
-
-mark {
-  background: #ff9;
-  color: #000;
-  font-style: italic;
-  font-weight: 700; }
-
-table, td, th {
-  border-color: gray; }
-
-thead, tbody, tfoot, tr {
-  border-color: inherit; }
-
-table[rules=none], table[rules=groups], table[rules=rows], table[rules=cols], table[rules=all], table[frame=void], table[frame=above], table[frame=below], table[frame=hsides], table[frame=lhs], table[frame=rhs], table[frame=vsides], table[frame=box], table[frame=border], table[rules=none] > tr > td, table[rules=none] > tr > th, table[rules=groups] > tr > td, table[rules=groups] > tr > th, table[rules=rows] > tr > td, table[rules=rows] > tr > th, table[rules=cols] > tr > td, table[rules=cols] > tr > th, table[rules=all] > tr > td, table[rules=all] > tr > th, table[rules=none] > thead > tr > td, table[rules=none] > thead > tr > th, table[rules=groups] > thead > tr > td, table[rules=groups] > thead > tr > th, table[rules=rows] > thead > tr > td, table[rules=rows] > thead > tr > th, table[rules=cols] > thead > tr > td, table[rules=cols] > thead > tr > th, table[rules=all] > thead > tr > td, table[rules=all] > thead > tr > th, table[rules=none] > tbody > tr > td, table[rules=none] > tbody > tr > th, table[rules=groups] > tbody > tr > td, table[rules=groups] > tbody > tr > th, table[rules=rows] > tbody > tr > td, table[rules=rows] > tbody > tr > th, table[rules=cols] > tbody > tr > td, table[rules=cols] > tbody > tr > th, table[rules=all] > tbody > tr > td, table[rules=all] > tbody > tr > th, table[rules=none] > tfoot > tr > td, table[rules=none] > tfoot > tr > th, table[rules=groups] > tfoot > tr > td, table[rules=groups] > tfoot > tr > th, table[rules=rows] > tfoot > tr > td, table[rules=rows] > tfoot > tr > th, table[rules=cols] > tfoot > tr > td, table[rules=cols] > tfoot > tr > th, table[rules=all] > tfoot > tr > td, table[rules=all] > tfoot > tr > th {
-  border-color: #000; }
-
-:link, :visited, ins, u {
-  text-decoration: underline; }
-
-abbr[title], acronym[title] {
-  text-decoration: dotted underline; }
-
-blink {
-  text-decoration: blink; }
-
-q:before {
-  content: open-quote; }
-
-q:after {
-  content: close-quote; }
-
-listing, plaintext, pre, xmp {
-  white-space: pre; }
-
-ol {
-  list-style-type: decimal; }
-
-[dir=ltr] {
-  direction: ltr;
-  unicode-bidi: embed; }
-
-[dir=rtl] {
-  direction: rtl;
-  unicode-bidi: embed; }
-
-bdo[dir=ltr], bdo[dir=rtl] {
-  unicode-bidi: bidi-override; }
-
-pre[wrap] {
-  white-space: pre-wrap; }
-
-br[clear=left] {
-  clear: left; }
-
-br[clear=right] {
-  clear: right; }
-
-br[clear=all], br[clear=both] {
-  clear: both; }
-
-ol[type=a], li[type=a] {
-  list-style-type: lower-alpha; }
-
-ol[type=A], li[type=A] {
-  list-style-type: upper-alpha; }
-
-ol[type=i], li[type=i] {
-  list-style-type: lower-roman; }
-
-ol[type=I], li[type=I] {
-  list-style-type: upper-roman; }
-
-table[rules=none], table[rules=groups], table[rules=rows], table[rules=cols], table[rules=all] {
-  border-collapse: collapse;
-  border-style: none; }
-
-table[frame=void] {
-  border-style: hidden; }
-
-table[frame=above] {
-  border-style: solid hidden hidden; }
-
-table[frame=below] {
-  border-style: hidden hidden solid; }
-
-table[frame=hsides] {
-  border-style: solid hidden; }
-
-table[frame=lhs] {
-  border-style: hidden hidden hidden solid; }
-
-table[frame=rhs] {
-  border-style: hidden solid hidden hidden; }
-
-table[frame=vsides] {
-  border-style: hidden solid; }
-
-table[rules=none] > tr > td, table[rules=none] > tr > th, table[rules=none] > thead > tr > td, table[rules=none] > thead > tr > th, table[rules=none] > tbody > tr > td, table[rules=none] > tbody > tr > th, table[rules=none] > tfoot > tr > td, table[rules=none] > tfoot > tr > th, table[rules=groups] > tr > td, table[rules=groups] > tr > th, table[rules=groups] > thead > tr > td, table[rules=groups] > thead > tr > th, table[rules=groups] > tbody > tr > td, table[rules=groups] > tbody > tr > th, table[rules=groups] > tfoot > tr > td, table[rules=groups] > tfoot > tr > th, table[rules=rows] > tr > td, table[rules=rows] > tr > th, table[rules=rows] > thead > tr > td, table[rules=rows] > thead > tr > th, table[rules=rows] > tbody > tr > td, table[rules=rows] > tbody > tr > th, table[rules=rows] > tfoot > tr > td, table[rules=rows] > tfoot > tr > th {
-  border-style: none; }
-
-table[rules=cols] > tr > td, table[rules=cols] > tr > th, table[rules=cols] > thead > tr > td, table[rules=cols] > thead > tr > th, table[rules=cols] > tbody > tr > td, table[rules=cols] > tbody > tr > th, table[rules=cols] > tfoot > tr > td, table[rules=cols] > tfoot > tr > th {
-  border-style: none solid; }
-
-table[border] > tr > td, table[border] > tr > th, table[border] > thead > tr > td, table[border] > thead > tr > th, table[border] > tbody > tr > td, table[border] > tbody > tr > th, table[border] > tfoot > tr > td, table[border] > tfoot > tr > th {
-  border-width: 1px; }
-
-table, input, select, option, optgroup, button, textarea, keygen {
-  text-indent: initial; }
-
-input {
-  box-sizing: border-box; }
-
-hr {
-  border: 0;
-  border-style: inset;
-  border-top: 1px solid #ccc;
-  border-width: 1px;
-  color: gray;
-  display: block;
-  height: 1px;
-  margin: 1em 0;
-  padding: 0;
-  box-sizing: content-box;
-  -moz-box-sizing: content-box; }
-
-hr[align=left] {
-  margin-left: 0;
-  margin-right: auto; }
-
-hr[align=right] {
-  margin-left: auto;
-  margin-right: 0; }
-
-fieldset {
-  border: groove 2px ThreeDFace;
-  margin-left: 2px;
-  margin-right: 2px;
-  padding: .35em .625em .75em; }
-
-iframe {
-  border: 2px inset; }
-
-img[align=left] {
-  margin-right: 3px; }
-
-img[align=right] {
-  margin-left: 3px; }
-
-applet[align=texttop], embed[align=texttop], iframe[align=texttop], img[align=texttop], input[type=image][align=texttop], object[align=texttop] {
-  vertical-align: text-top; }
-
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
-  border: 0;
-  font-size: 100%;
+/* ------------------------------------
+  BEGIN: Reset Stylesheet
+ ------------------------------------ */
+/* This code block is released into public domain
+   http://hail2u.net/styles/default.css */
+html, body, div, span, applet, object, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn,
+em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas,
+details, embed, figure, figcaption, footer, header, hgroup, menu, nav,
+output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
-  outline: 0;
   padding: 0;
-  vertical-align: baseline; }
+  border: 0;
+  font-size: 100%; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup,
+menu, nav, section {
+  display: block; }
 
 body {
   line-height: 1; }
-
-nav ul {
-  list-style: none; }
 
 blockquote, q {
   quotes: none; }
@@ -328,88 +32,66 @@ blockquote, q {
 blockquote:before, blockquote:after, q:before, q:after {
   content: none; }
 
-a {
-  font-size: 100%;
-  margin: 0;
-  padding: 0;
-  vertical-align: baseline; }
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
 
-ins {
-  background: #ff9;
-  color: #000;
-  text-decoration: none; }
+address, caption, cite, code, dfn, em, strong, th, h1, h2, h3, h4, h5,
+h6, input, select, textarea {
+  font-family: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  font-size: inherit; }
 
-abbr[title], dfn[title] {
-  border-bottom: 1px dotted;
-  cursor: help; }
+li {
+  list-style: none; }
 
-address, article, aside, blockquote, body, center, dd, dir, div, dl, dt, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, hr, html, legend, listing, menu, nav, ol, p, plaintext, pre, section, ul, xmp, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-  display: block; }
+caption, th {
+  text-align: left; }
 
-thead, tbody, tfoot, table > tr, col[valign=middle], thead[valign=middle], tbody[valign=middle], tfoot[valign=middle], tr[valign=middle], td[valign=middle], th[valign=middle], applet[align=absmiddle], embed[align=absmiddle], iframe[align=absmiddle], img[align=absmiddle], input[type=image][align=absmiddle], object[align=absmiddle], applet[align=abscenter], embed[align=abscenter], iframe[align=abscenter], img[align=abscenter], input[type=image][align=abscenter], object[align=abscenter], input, select {
-  vertical-align: middle; }
-
-th, p[align=center], h1[align=center], h2[align=center], h3[align=center], h4[align=center], h5[align=center], h6[align=center] {
-  text-align: center; }
-
-table[align=left], applet[align=left], embed[align=left], iframe[align=left], img[align=left], input[type=image][align=left], object[align=left] {
-  float: left; }
-
-table[align=right], applet[align=right], embed[align=right], iframe[align=right], img[align=right], input[type=image][align=right], object[align=right] {
-  float: right; }
-
-table[align=center], table[align=abscenter], table[align=absmiddle], table[align=middle], hr[align=center] {
-  margin-left: auto;
-  margin-right: auto; }
-
-col[valign=top], thead[valign=top], tbody[valign=top], tfoot[valign=top], tr[valign=top], td[valign=top], th[valign=top], applet[align=top], embed[align=top], iframe[align=top], img[align=top], input[type=image][align=top], object[align=top] {
-  vertical-align: top; }
-
-col[valign=bottom], thead[valign=bottom], tbody[valign=bottom], tfoot[valign=bottom], tr[valign=bottom], td[valign=bottom], th[valign=bottom], applet[align=bottom], embed[align=bottom], iframe[align=bottom], img[align=bottom], input[type=image][align=bottom], object[align=bottom] {
-  vertical-align: bottom; }
-
-col[valign=baseline], thead[valign=baseline], tbody[valign=baseline], tfoot[valign=baseline], tr[valign=baseline], td[valign=baseline], th[valign=baseline], applet[align=bottom], embed[align=bottom], iframe[align=bottom], img[align=bottom], input[type=image][align=bottom], object[align=bottom], applet[align=baseline], embed[align=baseline], iframe[align=baseline], img[align=baseline], input[type=image][align=baseline], object[align=baseline] {
-  vertical-align: baseline; }
-
-del, s, strike, del {
-  text-decoration: line-through; }
-
-nobr, td[nowrap], th[nowrap] {
-  white-space: nowrap; }
-
-dir, menu, ul, ul[type=disc], li[type=disc] {
-  list-style-type: disc; }
-
-dir dl, dir menu, dir ul, menu dl, menu menu, menu ul, ol dl, ol menu, ol ul, ul dl, ul menu, ul ul, ul[type=circle], li[type=circle] {
-  list-style-type: circle; }
-
-dir dir dl, dir dir menu, dir dir ul, dir menu dl, dir menu menu, dir menu ul, dir ol dl, dir ol menu, dir ol ul, dir ul dl, dir ul menu, dir ul ul, menu dir dl, menu dir menu, menu dir ul, menu menu dl, menu menu menu, menu menu ul, menu ol dl, menu ol menu, menu ol ul, menu ul dl, menu ul menu, menu ul ul, ol dir dl, ol dir menu, ol dir ul, ol menu dl, ol menu menu, ol menu ul, ol ol dl, ol ol menu, ol ol ul, ol ul dl, ol ul menu, ol ul ul, ul dir dl, ul dir menu, ul dir ul, ul menu dl, ul menu menu, ul menu ul, ul ol dl, ul ol menu, ul ol ul, ul ul dl, ul ul menu, ul ul ul, ul[type=square], li[type=square] {
-  list-style-type: square; }
-
-table[frame=box], table[frame=border], table[rules=groups] > colgroup, table[rules=groups] > thead, table[rules=groups] > tbody, table[rules=groups] > tfoot, table[rules=rows] > tr, table[rules=rows] > thead > tr, table[rules=rows] > tbody > tr, table[rules=rows] > tfoot > tr, table[rules=all] > tr > td, table[rules=all] > tr > th, table[rules=all] > thead > tr > td, table[rules=all] > thead > tr > th, table[rules=all] > tbody > tr > td, table[rules=all] > tbody > tr > th, table[rules=all] > tfoot > tr > td, table[rules=all] > tfoot > tr > th, hr[color], hr[noshade] {
-  border-style: solid; }
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0; }
 
 /* ------------------------------------
   END: Reset Stylesheet
  ------------------------------------ */
 /* ------------------------------------
   BEGIN: add reset styles
-  (original: http://yui.yahooapis.com/2.8.2r1/build/fonts/fonts.css )
  ----------------------------------- */
+html {
+  /* 常にスクロールバーを表示 */
+  height: 101%; }
+
 html body {
-  font: 13px/1.231 "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; }
+  /* YUI 2: Fonts CSS
+   * http://developer.yahoo.com/yui/fonts/ */
+  font: 13px/1.231 "MaruGoR-AA", "MeiryoKe_PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; }
   html body.lte7 {
+    /* IE7 以下のフォント固定を解除 */
     font-size: small; }
+  html body.ie8 {
+    /* IE8 でもフォントが固定されるので解除
+     * http://individualpackage.blog41.fc2.com/blog-entry-56.html */
+    font-size: 92%; }
   html body select, html body input, html body button, html body textarea, html body button {
     font: 99%; }
   html body table {
     font-size: inherit;
     font: 100%; }
   html body pre, html body code, html body kbd, html body samp, html body tt {
-    font-family: monospace;
+    font-family: "VL ゴシック", "VL Gothic", "MeiryoKe_Console", "Courier", "Consolas", "Courier New", monospace;
     line-height: 1; }
     html body pre.lte7, html body code.lte7, html body kbd.lte7, html body samp.lte7, html body tt.lte7 {
       font-size: 108%; }
+
+img {
+  /* 行の高さを正しく算出しない - CSSバグリスト
+   * http://css-bug.jp/win/ie/ver6/0252/ */
+  vertical-align: bottom;
+  font-size: 0;
+  line-height: 0; }
 
 /* ------------------------------------
   END: add reset styles
@@ -418,7 +100,6 @@ html body {
   BEGIN: elements
  ----------------------------------- */
 body {
-  background: #ffd900 repeat-x fixed;
   color: #0d0015; }
 
 a:link, a:visited, a:hover, a:active {
@@ -431,7 +112,16 @@ a:visited {
   color: #bc64a4; }
 a:hover {
   color: #f3f3f2;
-  background-color: #0d0015; }
+  background-color: #0d0015;
+  box-shadow: #ff8000 1px 1px 1px, #ff8000 1px 1px 1px, #ff8000 1px 1px 11px, #ff8000 1px 1px 11px;
+  -moz-box-shadow: #ff8000 1px 1px 1px, #ff8000 1px 1px 1px, #ff8000 1px 1px 11px, #ff8000 1px 1px 11px;
+  -webkit-box-shadow: #ff8000 1px 1px 1px, #ff8000 1px 1px 1px, #ff8000 1px 1px 11px, #ff8000 1px 1px 11px;
+  -o-box-shadow: #ff8000 1px 1px 1px, #ff8000 1px 1px 1px, #ff8000 1px 1px 11px, #ff8000 1px 1px 11px;
+  -ms-box-shadow: #ff8000 1px 1px 1px, #ff8000 1px 1px 1px, #ff8000 1px 1px 11px, #ff8000 1px 1px 11px;
+  filter: alpha(opacity=80);
+  -moz-opacity: 0.8;
+  -khtml-opacity: 0.8;
+  opacity: 0.8; }
 a img {
   border-style: none;
   /* http://hail2u.net/blog/webdesign/ */
@@ -446,7 +136,7 @@ nav ul {
   margin: 1em 0; }
 
 code {
-  font-family: "Courier", "Consolas", "Courier New", monospace; }
+  font-family: "VL ゴシック", "VL Gothic", "MeiryoKe_Console", "Courier", "Consolas", "Courier New", monospace; }
 
 i {
   font-style: italic; }
@@ -472,6 +162,40 @@ mark {
  ----------------------------------- */
 /* Block
  ----------------*/
+html {
+  background: #ffd900; }
+
+body:before, body:after {
+  content: "";
+  display: block;
+  position: fixed;
+  right: 0;
+  left: 0;
+  height: 0.01px;
+  z-index: 20;
+  text-indent: -9999px; }
+
+body:before {
+  top: 0;
+  box-shadow: 0px 0px 50px 10px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 50px 10px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 0px 50px 10px rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 0px 0px 50px 10px rgba(0, 0, 0, 0.5);
+  -ms-box-shadow: 0px 0px 50px 10px rgba(0, 0, 0, 0.5); }
+
+body:after {
+  box-shadow: 0px 0px 50px 20px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 50px 20px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 0px 50px 20px rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 0px 0px 50px 20px rgba(0, 0, 0, 0.5);
+  -ms-box-shadow: 0px 0px 50px 20px rgba(0, 0, 0, 0.5);
+  /*margin-bottom:1.2em;
+  bottom:16px;*/
+  bottom: 0px; }
+
+body {
+  background-color: rgba(255, 217, 0, 0.8); }
+
 #banner header,
 #container,
 #footer footer {
@@ -487,47 +211,51 @@ mark {
 
 #info {
   float: right;
+  /* IEでフロートさせたボックスのマージンが倍になるバグ - Weblog - hail2u.net
+   * http://hail2u.net/blog/webdesign/doubled_margin_bug_at_ie.html */
   display: inline;
   margin: 8px; }
 
 #main {
   float: left;
+  /* IEでフロートさせたボックスのマージンが倍になるバグ - Weblog - hail2u.net
+   * http://hail2u.net/blog/webdesign/doubled_margin_bug_at_ie.html */
   display: inline;
   margin: 8px; }
 
 #links {
   float: right;
+  /* IEでフロートさせたボックスのマージンが倍になるバグ - Weblog - hail2u.net
+   * http://hail2u.net/blog/webdesign/doubled_margin_bug_at_ie.html */
   display: inline;
   margin: 8px; }
 
 #info, #main, #links {
   overflow: hidden; }
 
-.lte7 #container, .lte7
-article, .lte7
-#links {
-  zoom: 1; }
-#container:before, #container:after,
-article:before,
-article:after,
-#links:before,
-#links:after {
-  display: block;
-  height: 0.01px;
-  visibility: hidden;
-  content: "\0020"; }
-#container:after,
-article:after,
-#links:after {
+#container:before, #container:after, article:before, article:after, #links:before, #links:after {
+  /** A new micro clearfix hack ? Nicolas Gallagher
+   * http://nicolasgallagher.com/micro-clearfix-hack/
+   */
+  /* For modern browsers */
+  content: "";
+  display: table; }
+#container:after, article:after, #links:after {
+  /* For modern browsers */
   clear: both; }
+.lt7 #container, .lt7 article, .lt7 #links {
+  /* For IE 6/7 (trigger hasLayout) */
+  zoom: 1; }
 
 /* Inner
  ----------------*/
 #banner {
   background-color: #c9171e;
-  -moz-box-shadow: -4px 0px 4px 0px rgba(201, 23, 30, 0.8);
-  -webkit-box-shadow: -4px 0px 4px 0px rgba(201, 23, 30, 0.8);
-  box-shadow: -4px 0px 4px 0px rgba(201, 23, 30, 0.8); }
+  box-shadow: 0 2px 4px rgba(201, 23, 30, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow: 0 2px 4px rgba(201, 23, 30, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -webkit-box-shadow: 0 2px 4px rgba(201, 23, 30, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -o-box-shadow: 0 2px 4px rgba(201, 23, 30, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -ms-box-shadow: 0 2px 4px rgba(201, 23, 30, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset; }
   #banner header {
     margin-bottom: 0px;
     padding: 0; }
@@ -542,7 +270,7 @@ article:after,
     font: 197%/1.6 "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     width: 352px; }
   #banner .description {
-    font: 77%/1.6 "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    font: 77%/1.6 "MaruGoR-AA", "MeiryoKe_PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
     width: 576px; }
   #banner a {
     text-decoration: none;
@@ -559,9 +287,11 @@ article:after,
     background-color: white;
     margin-bottom: 1em;
     border: 1px solid #c1d8ac;
-    -moz-box-shadow: 0px 1px 2px 0px rgba(193, 216, 172, 0.8);
-    -webkit-box-shadow: 0px 1px 2px 0px rgba(193, 216, 172, 0.8);
-    box-shadow: 0px 1px 2px 0px rgba(193, 216, 172, 0.8);
+    box-shadow: 0px 2px 2px 0px rgba(193, 216, 172, 0.8);
+    -moz-box-shadow: 0px 2px 2px 0px rgba(193, 216, 172, 0.8);
+    -webkit-box-shadow: 0px 2px 2px 0px rgba(193, 216, 172, 0.8);
+    -o-box-shadow: 0px 2px 2px 0px rgba(193, 216, 172, 0.8);
+    -ms-box-shadow: 0px 2px 2px 0px rgba(193, 216, 172, 0.8);
     padding: 1em; }
     #main article header p {
       display: block;
@@ -578,7 +308,7 @@ article:after,
       padding-left: 1em;
       margin-left: 1em; }
     #main article section.notes ol.notes {
-      font: 77% "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+      font: 77% "MaruGoR-AA", "MeiryoKe_PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
       margin: 0; }
       #main article section.notes ol.notes li {
         list-style: none;
@@ -589,7 +319,7 @@ article:after,
           vertical-align: middle;
           border: 2px solid #afafb0; }
     #main article footer {
-      font: 77% "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+      font: 77% "MaruGoR-AA", "MeiryoKe_PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
       border-top: 1px solid #f3f3f3;
       padding-top: 1em; }
       #main article footer a {
@@ -631,7 +361,7 @@ article:after,
       border-radius: 8px;
       margin: 0 0 16px 0;
       padding: 1em;
-      font: 123.1% "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "ＭＳ Ｐ明朝", "MS PMincho", serif; }
+      font: 123.1% "IPA モナー P明朝", "IPA mona PMincho", "IPA P明朝", "IPA PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "ＭＳ Ｐ明朝", "MS PMincho", serif; }
       #main article.quote blockquote:before {
         border-top-width: 16px;
         border-right-width: 16px;
@@ -666,6 +396,34 @@ article:after,
     #main article.photo div.photo {
       text-align: center;
       padding-bottom: 1em; }
+      #main article.photo div.photo img {
+        border: 16px #fff solid;
+        position: relative;
+        background: none repeat scroll 0 0 #FFFFFF;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        -o-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        -ms-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset; }
+        #main article.photo div.photo img:before, #main article.photo div.photo img:after {
+          position: absolute;
+          z-index: -2;
+          content: "";
+          width: 100%; }
+        #main article.photo div.photo img:before {
+          right: 10px;
+          bottom: 0;
+          left: 10px;
+          border-radius: 100px 100px 100px 100px/10px 10px 10px 10px;
+          -moz-border-radius: 100px 100px 100px 100px/10px 10px 10px 10px;
+          -webkit-border-radius: 100px 100px 100px 100px/10px 10px 10px 10px;
+          -o-border-radius: 100px 100px 100px 100px/10px 10px 10px 10px;
+          -ms-border-radius: 100px 100px 100px 100px/10px 10px 10px 10px;
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+          -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+          -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+          -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+          -ms-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6); }
     #main article.chat p {
       margin: 0;
       padding: 1em; }
@@ -683,7 +441,7 @@ article:after,
       #main article.answer div.answer p:last-child {
         margin-bottom: 0; }
     #main article.answer {
-      font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; }
+      font-family: "MaruGoR-AA", "MeiryoKe_PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; }
     #main article header time, #main article.answer div.by {
       font-weight: 700; }
     #main article footer ul {
@@ -694,9 +452,9 @@ article:after,
       color: #bc64a4; }
     #main article p, #main article blockquote p, #main article pre {
       margin-bottom: 1em;
-      font: 123.1%/1.6 "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; }
+      font: 123.1%/1.6 "MaruGoR-AA", "MeiryoKe_PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; }
     #main article p img {
-      font: 13px/1.231 "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; }
+      font: 123.1%/1.6 "MaruGoR-AA", "MeiryoKe_PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; }
     #main article li.notes mark {
       font-style: normal; }
     #main article .photo a {
@@ -705,12 +463,12 @@ article:after,
 
 #info {
   width: 352px;
-  font: 77% "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-  background: #ffd900 url("http://static.tumblr.com/i7vkogx/meblhoggu/csg-4d748e4433eb4.png") no-repeat 0 -168px; }
-  .lte6 #info {
-    background: #ffd900 url("http://static.tumblr.com/i7vkogx/qHclhq1ud/_i7vkogx_4vdlhogxr_csg-4d749037e5c52.gif.png") no-repeat 0 -168px; }
+  font: 77% "MaruGoR-AA", "MeiryoKe_PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; }
   #info div {
-    margin-top: 144px; }
+    background: transparent url("http://static.tumblr.com/i7vkogx/meblhoggu/csg-4d748e4433eb4.png") no-repeat 0 -168px;
+    padding-top: 144px; }
+    .lte6 #info div {
+      background: transparent url("http://static.tumblr.com/i7vkogx/qHclhq1ud/_i7vkogx_4vdlhogxr_csg-4d749037e5c52.gif.png") no-repeat 0 -168px; }
   #info nav a {
     text-decoration: none; }
   #info nav li {
@@ -722,7 +480,7 @@ article:after,
 
 #links {
   width: 352px;
-  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; }
+  font-family: "MaruGoR-AA", "MeiryoKe_PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; }
   #links h1 {
     margin-bottom: 5px; }
   #links li {
@@ -733,11 +491,11 @@ article:after,
       max-width: 160px;
       background-color: white; }
     #links li.html5logo {
-      background: #ffd900 url("http://static.tumblr.com/i7vkogx/meblhoggu/csg-4d748e4433eb4.png") no-repeat 0 -96px;
+      background: transparent url("http://static.tumblr.com/i7vkogx/meblhoggu/csg-4d748e4433eb4.png") no-repeat 0 -96px;
       width: 165px;
       height: 64px; }
       .lte6 #links li.html5logo {
-        background: #ffd900 url("http://static.tumblr.com/i7vkogx/qHclhq1ud/_i7vkogx_4vdlhogxr_csg-4d749037e5c52.gif.png") no-repeat 0 -96px; }
+        background: transparent url("http://static.tumblr.com/i7vkogx/qHclhq1ud/_i7vkogx_4vdlhogxr_csg-4d749037e5c52.gif.png") no-repeat 0 -96px; }
       #links li.html5logo a {
         display: block;
         padding-top: 64px;
@@ -768,33 +526,41 @@ article:after,
   border-radius: 12px;
   -moz-border-radius: 12px;
   -webkit-border-radius: 12px;
+  -o-border-radius: 12px;
+  -ms-border-radius: 12px;
   background: white url("http://static.tumblr.com/i7vkogx/meblhoggu/csg-4d748e4433eb4.png") no-repeat fixed 0 -72;
   width: 16px;
   height: 16px;
   padding: 4px 4px 4px 20px; }
 
 /* add @asiamoth */
-#main > h1,
-#info > h1,
-#links > h1,
-#links .search > h2,
-#links nav > h2 {
+#main h1,
+#info h1,
+#links h1,
+#links .search h2,
+#links nav h2 {
   height: 0;
   width: 0;
   overflow: hidden;
   display: block;
-  z-index: -1; }
-  .lte5 #main > h1, .lte5
-  #info > h1, .lte5
-  #links > h1, .lte5
-  #links .search > h2, .lte5
-  #links nav > h2 {
+  z-index: -1;
+  font-size: 0; }
+  .lte5 #main h1, .lte5
+  #info h1, .lte5
+  #links h1, .lte5
+  #links .search h2, .lte5
+  #links nav h2 {
     display: none;
     padding-top: 0px;
     zoom: 1; }
 
 #footer {
   background: none repeat scroll 0 0 #c9171e;
+  box-shadow: 0 -1px 4px rgba(201, 23, 30, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow: 0 -1px 4px rgba(201, 23, 30, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -webkit-box-shadow: 0 -1px 4px rgba(201, 23, 30, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -o-box-shadow: 0 -1px 4px rgba(201, 23, 30, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -ms-box-shadow: 0 -1px 4px rgba(201, 23, 30, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   margin-top: 0px;
   height: 40px;
   padding: 0; }

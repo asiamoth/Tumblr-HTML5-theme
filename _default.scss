@@ -13,12 +13,12 @@ $lightestblue: rgb(219, 231, 255);
 $yellow:       rgb(255, 222,   0);
 
 //// Font Family
-$sans-serif: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic",sans-serif;
-$monospace: "Courier", "Consolas", "Courier New", monospace;
-$serif: "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "ＭＳ Ｐ明朝", "MS PMincho", serif;
+$sans-serif: "MaruGoR-AA", "MeiryoKe_PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic",sans-serif;
+$monospace: "VL ゴシック", "VL Gothic",  "MeiryoKe_Console", "Courier", "Consolas", "Courier New", monospace;
+$serif: "IPA モナー P明朝", "IPA mona PMincho", "IPA P明朝", "IPA PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "ＭＳ Ｐ明朝", "MS PMincho", serif;
 // http://stystk.com/post/499463433/use-helvetica-neue-light
 $helvetica: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-$ascii-art: "Mona","IPA MONAPGOTHIC","MS PGothic","ＭＳ Ｐゴシック","MS Pｺﾞｼｯｸ","MS Pゴシック",sans-serif;
+$ascii-art: "MaruGoR-AA", "IPA モナー Pゴシック", "IPA MONAPGOTHIC", "Mona", "MS PGothic", "ＭＳ Ｐゴシック", "MS Pｺﾞｼｯｸ", "MS Pゴシック", sans-serif;
 
 //// Font Size
 // http://developer.yahoo.com/yui/fonts/
@@ -53,9 +53,37 @@ $raquo: "\00BB";
 // mixin
 // ------------------------------------
 
-// http://developer.yahoo.com/yui/fonts/
-@mixin default-font{
+@mixin yui-fonts {
+  /* YUI 2: Fonts CSS
+   * http://developer.yahoo.com/yui/fonts/ */
   font: 13px/1.231 $sans-serif;
+
+  &.lte7 {
+	/* IE7 以下のフォント固定を解除 */
+	font-size: small;
+  }
+
+  &.ie8 {
+	/* IE8 でもフォントが固定されるので解除
+	 * http://individualpackage.blog41.fc2.com/blog-entry-56.html */
+	font-size: 92%;
+  }
+
+  select, input, button, textarea, button {
+	font: 99%;
+  }
+  table {
+	font-size: inherit;
+	font: 100%;
+  }
+  pre,code,kbd,samp,tt {
+	//font-family: monospace;
+	font-family: $monospace;
+	line-height: 1;
+	&.lte7 {
+	  font-size: 108%;
+	}
+  }
 }
 
 @mixin clearfix {
@@ -68,7 +96,7 @@ $raquo: "\00BB";
 	// height: 0;
 	height: 0.01px;  // http://hail2u.net/pub/test/199.html
 	visibility: hidden;
-	content: "\0020";
+	content: "\0020" !important;
   }
 
   &:after {
@@ -76,16 +104,53 @@ $raquo: "\00BB";
   }
 }
 
+@mixin cf {
+  &:before,
+  &:after {
+	/** A new micro clearfix hack ? Nicolas Gallagher
+	 * http://nicolasgallagher.com/micro-clearfix-hack/
+	 */
+	/* For modern browsers */
+	content:"";
+	display:table;
+  }
+
+  &:after {
+	/* For modern browsers */
+	clear:both;
+  }
+
+  .lt7 & {
+	/* For IE 6/7 (trigger hasLayout) */
+	zoom:1;
+  }
+}
+
+// $value に , が混じる場合は、() で囲まないとエラーになる
+// 例: @include cross-browser(box-shadow, (0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset));
+@mixin cross-browser($property, $value, $css3: true, $moz: true, $webkit: true, $o: true, $ms: true) {
+  @if $css3 { #{$property}: $value }
+  @if $moz { -moz-#{$property}: $value }
+  @if $webkit { -webkit-#{$property}: $value }
+  @if $o { -o-#{$property}: $value }
+  @if $ms { -ms-#{$property}: $value }
+}
+
+
 @mixin rounded($side, $radius: 10px) {
   border-#{$side}-radius: $radius;
-  -moz-border-radius-#{$side}: $radius;
+  -moz-border-#{$side}-radius: $radius;
   -webkit-border-#{$side}-radius: $radius;
+  -o-border-#{$side}-radius: $radius;
+  -ms-border-#{$side}-radius: $radius;
 }
 
 @mixin round($radius: 10px) {
   border-radius: $radius;
   -moz-border-radius: $radius;
   -webkit-border-radius: $radius;
+  -o-border-radius: $radius;
+  -ms-border-radius: $radius;
 }
 
 // div a => block
@@ -98,6 +163,8 @@ $raquo: "\00BB";
 
 @mixin float($direction: left) {
   float: #{$direction};
+  /* IEでフロートさせたボックスのマージンが倍になるバグ - Weblog - hail2u.net
+   * http://hail2u.net/blog/webdesign/doubled_margin_bug_at_ie.html */
   display: inline;
 }
 
@@ -133,6 +200,7 @@ $raquo: "\00BB";
   overflow: hidden;
   display: block;
   z-index: -1;
+  font-size: 0;
 
   .lte5 & {
 	display: none;
@@ -241,7 +309,30 @@ $raquo: "\00BB";
 
 // http://www.htmq.com/css3/box-shadow.shtml
 @mixin box-shadow($box-shadow: rgba(0, 0, 0, 0.5)) {
--moz-box-shadow: $box-shadow;
--webkit-box-shadow: $box-shadow;
-box-shadow: $box-shadow;
+  -moz-box-shadow: $box-shadow;
+  -webkit-box-shadow: $box-shadow;
+  box-shadow: $box-shadow;
+}
+
+// http://bowz.info/409
+@mixin pre-wrap {
+  pre {
+	white-space: -moz-pre-wrap; /* Mozilla */
+	white-space: -pre-wrap;     /* Opera 4-6 */
+	white-space: -o-pre-wrap;   /* Opera 7 */
+	white-space: pre-wrap;      /* CSS3 */
+	word-wrap: break-word;      /* IE 5.5+ */
+  }
+}
+
+// Create a centred horizontal navigation — CSS Wizardry by Harry Roberts
+// http://csswizardry.com/2011/01/create-a-centred-horizontal-navigation/
+@mixin centred-nav {
+  text-align: center;
+  li {
+	display: inline;
+  }
+  a {
+	display: inline-block;
+  }
 }

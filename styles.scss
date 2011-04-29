@@ -1,14 +1,16 @@
 @charset "UTF-8";
 
 /* ------------------------------------
-    original: http://www.tumblr.com/theme/9731
+  original: http://www.tumblr.com/theme/9731
  ----------------------------------- */
 
 // † template.html の CSS バージョンを更新すること †
 
 // todo:
+// margin, padding の見直し（黄金比を意識する）
 // body に text-shadow？
-
+// 6, 10, 16, 26, 42, 68, 110, 178, 288 のスケールを元にする
+// a:hover のスタイル
 
 
 // ------------------------------------
@@ -87,8 +89,9 @@ $image-gif: url('http://static.tumblr.com/i7vkogx/qHclhq1ud/_i7vkogx_4vdlhogxr_c
 // Reset styles
 // ------------------------------------
 
-@import "html5-reset";
+//@import "html5-reset";
 //@import "html5reset-1.6.1";
+@import "hail2u-net_reset";
 /* ------------------------------------
   END: Reset Stylesheet
  ------------------------------------ */
@@ -98,29 +101,22 @@ $image-gif: url('http://static.tumblr.com/i7vkogx/qHclhq1ud/_i7vkogx_4vdlhogxr_c
 
 /* ------------------------------------
   BEGIN: add reset styles
-  (original: http://yui.yahooapis.com/2.8.2r1/build/fonts/fonts.css )
  ----------------------------------- */
 
+html {
+  /* 常にスクロールバーを表示 */
+  height: 101%;
+}
 html body {
-  font: 13px/1.231 $sans-serif;
+  @include yui-fonts;
+}
 
-  &.lte7 {
-	font-size: small;
-  }
-  select, input, button, textarea, button {
-	font: 99%;
-  }
-  table {
-	font-size:inherit;
-	font: 100%;
-  }
-  pre,code,kbd,samp,tt {
-	font-family:monospace;
-	line-height:1;
-	&.lte7 {
-	  font-size:108%;
-	}
-  }
+img {
+  /* 行の高さを正しく算出しない - CSSバグリスト
+   * http://css-bug.jp/win/ie/ver6/0252/ */
+  vertical-align: bottom;
+  font-size: 0;
+  line-height: 0;
 }
 
 /* ------------------------------------
@@ -135,7 +131,6 @@ html body {
  ----------------------------------- */
 
 body {
-  background: $KiIro repeat-x fixed;
   color: $Shikkoku;
 }
 
@@ -156,6 +151,8 @@ a {
   &:hover {
 	color: $Shironeri;
 	background-color: $Shikkoku;
+	@include cross-browser(box-shadow, (#FF8000 1px 1px 1px, #FF8000 1px 1px 1px, #FF8000 1px 1px 11px, #FF8000 1px 1px 11px));
+	@include opacity(0.8);
   }
 
   img {
@@ -215,6 +212,38 @@ mark {
 /* Block
  ----------------*/
 
+html {
+  background: $KiIro;
+  // background: $KiIro url("http://subtlepatterns.com/patterns/gray_sand.gif") repeat scroll 0 0;
+}
+
+body:before, body:after {
+  content:"";
+  display:block;
+  position:fixed;
+  right:0;
+  left:0;
+  height: 0.01px;
+  z-index:20;
+  text-indent:-9999px;
+}
+
+body:before{
+  top:0;
+  @include cross-browser(box-shadow, (0px 0px 50px 10px rgba(#000, 0.5)));
+}
+
+body:after{
+  @include cross-browser(box-shadow, (0px 0px 50px 20px rgba(#000, 0.5)));
+  /*margin-bottom:1.2em;
+  bottom:16px;*/
+  bottom: 0px;
+}
+
+body {
+  background-color: rgba($KiIro, 0.8);
+}
+
 // centering
 // ----------------
 #banner header,
@@ -255,22 +284,19 @@ mark {
   overflow: hidden;
 }
 
-#container,
-article,
-#links {
-  @include clearfix;
+#container, article, #links {
+  @include cf;
 }
 
 /* Inner
  ----------------*/
 
 #banner {
-  //border-bottom: 2px solid $Shikkoku;
   background-color: $Kokihi;
+  //background-color: rgba($Kokihi, 0.8);
 
   // http://h2ham.seesaa.net/article/169464108.html
-  @include box-shadow(-4px 0px 4px 0px rgba($Kokihi, 0.8) );
-
+  @include cross-browser(box-shadow, (0 2px 4px rgba($Kokihi, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset));
   header {
 	margin-bottom: 0px;
 	padding: 0;
@@ -289,8 +315,6 @@ article,
 	  zoom: 1
 	}
   }
-
-
 
   h1 {
 	font: #{$fontLarge}/1.6 $helvetica;
@@ -320,7 +344,7 @@ article,
 	background-color: $Shiro;
 	margin-bottom: 1em;
 	border: 1px solid $Urahayanagi;
-	@include box-shadow(0px 1px 2px 0px rgba($Urahayanagi, 0.8) );
+	@include cross-browser(box-shadow, (0px 2px 2px 0px rgba($Urahayanagi, 0.8)));
 
 	padding: 1em;
 	header {
@@ -469,12 +493,35 @@ article,
 		//border-style: solid;
 		//border-width: 0 20px 40px 0;
 		// }
-
 	}
+
 	&.photo div.photo {
 	  text-align: center;
 	  padding-bottom: 1em;
+
+	  img {
+		border: 16px #fff solid;
+		position: relative;
+		background: none repeat scroll 0 0 #FFFFFF;
+		@include cross-browser(box-shadow, (0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset));
+
+		&:before, &:after {
+		  position: absolute;
+		  z-index: -2;
+		  content: "";
+		  width: 100%;
+		}
+
+		&:before {
+		  right: 10px;
+		  bottom: 0;
+		  left: 10px;
+		  @include cross-browser(border-radius, 100px 100px 100px 100px / 10px 10px 10px 10px);
+		  @include cross-browser(box-shadow, 0 0 15px rgba(0, 0, 0, 0.6));
+		}
+	  }
 	}
+
 	&.chat p {
 	  margin: 0;
 	  padding: 1em;
@@ -521,7 +568,8 @@ article,
 	  font: #{$fontMiddle}/1.6 $sans-serif;
 	}
 	p img {
-	  @include default-font;
+	  //@include default-font;
+	  font: #{$fontMiddle}/1.6 $sans-serif;
 	}
 	li.notes mark {
 	  font-style: normal;
@@ -539,12 +587,14 @@ article,
 #info {
   width: $infoWidth;
   font: $fontSmall $sans-serif;
-  background: $KiIro $image-png no-repeat 0 -168px;
-  .lte6 & {
-	background: $KiIro $image-gif no-repeat 0 -168px;
-  }
+  //background: $KiIro $image-png no-repeat 0 -168px;
+
   div{
-	margin-top: 128px + 16px;
+	background: transparent $image-png no-repeat 0 -168px;
+	padding-top: 128px + 16px;
+	.lte6 & {
+	  background: transparent $image-gif no-repeat 0 -168px;
+	}
   }
 
   nav {
@@ -579,11 +629,11 @@ article,
 	}
 
 	&.html5logo {
-	  background: $KiIro $image-png no-repeat 0 -96px;
+	  background: transparent $image-png no-repeat 0 -96px;
 	  width: 165px;
 	  height: 64px;
 	  .lte6 & {
-		background: $KiIro $image-gif no-repeat 0 -96px;
+		background: transparent $image-gif no-repeat 0 -96px;
 	  }
 	  a{
 		display: block;
@@ -631,7 +681,7 @@ article,
   font-size: $fontSmall;
   border: 1px solid $Urahayanagi;
   width: 134px;
-  @include round(12px);
+  @include cross-browser(border-radius, 12px);
   //background: white url('http://static.tumblr.com/pwgidgy/jbel15m9e/search.png') no-repeat 2px center;
   background: #fff $image-png no-repeat fixed 0 -72;
   width: 16px;
@@ -641,17 +691,17 @@ article,
 
 /* add @asiamoth */
 
-#main > h1,
-#info > h1,
-#links > h1,
-#links .search > h2,
-#links nav > h2 {
+#main h1,
+#info h1,
+#links h1,
+#links .search h2,
+#links nav h2 {
   @include hide;
 }
 
 #footer {
   background: none repeat scroll 0 0 $Kokihi;
-  //@include box-shadow(4px 0px 0px 0px rgba($Kokihi, 0.8) );
+  @include cross-browser(box-shadow, (0 -1px 4px rgba($Kokihi, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset));
   margin-top: 0px;
   height: 40px;
   padding: 0;
