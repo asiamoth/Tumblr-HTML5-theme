@@ -108,8 +108,7 @@ $raquo: "\00BB";
   &:before,
   &:after {
 	/** A new micro clearfix hack ? Nicolas Gallagher
-	 * http://nicolasgallagher.com/micro-clearfix-hack/
-	 */
+	  * http://nicolasgallagher.com/micro-clearfix-hack/ */
 	/* For modern browsers */
 	content:"";
 	display:table;
@@ -128,7 +127,7 @@ $raquo: "\00BB";
 
 // $value に , が混じる場合は、() で囲まないとエラーになる
 // 例: @include cross-browser(box-shadow, (0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset));
-@mixin cross-browser($property, $value, $css3: true, $moz: true, $webkit: true, $o: true, $ms: true) {
+@mixin cross-browser($property, $value, $css3: true, $moz: true, $webkit: true, $o: true, $ms: false) {
   @if $css3 { #{$property}: $value }
   @if $moz { -moz-#{$property}: $value }
   @if $webkit { -webkit-#{$property}: $value }
@@ -284,6 +283,7 @@ $raquo: "\00BB";
 
 // https://gist.github.com/277379
 @mixin opacity($opacity: 0.5) {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity = $opacity * 100)";
   filter: alpha(opacity = $opacity * 100);
   -moz-opacity: $opacity;
   -khtml-opacity: $opacity;

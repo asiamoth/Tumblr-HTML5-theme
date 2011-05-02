@@ -8,9 +8,7 @@
 
 // todo:
 // margin, padding の見直し（黄金比を意識する）
-// body に text-shadow？
 // 6, 10, 16, 26, 42, 68, 110, 178, 288 のスケールを元にする
-// a:hover のスタイル
 
 
 // ------------------------------------
@@ -131,7 +129,8 @@ img {
  ----------------------------------- */
 
 body {
-  color: $Shikkoku;
+  // 暗黒色（あんこくしょく）は中二カラー
+  color: $AnkokuShoku;
 }
 
 a:link, a:visited, a:hover, a:active {
@@ -150,8 +149,9 @@ a {
 
   &:hover {
 	color: $Shironeri;
-	background-color: $Shikkoku;
-	@include cross-browser(box-shadow, (#FF8000 1px 1px 1px, #FF8000 1px 1px 1px, #FF8000 1px 1px 11px, #FF8000 1px 1px 11px));
+	background-color: $AnkokuShoku;
+	// hover だから樺色(かばいろ) ……だと……！？
+	@include cross-browser(box-shadow, ($KabaIro 1px 1px 1px, $KabaIro 1px 1px 1px, $KabaIro 1px 1px 11px, $KabaIro 1px 1px 11px));
 	@include opacity(0.8);
   }
 
@@ -228,16 +228,14 @@ body:before, body:after {
   text-indent:-9999px;
 }
 
-body:before{
-  top:0;
-  @include cross-browser(box-shadow, (0px 0px 50px 10px rgba(#000, 0.5)));
-}
+//body:before{
+  //  top:0;
+  //  @include cross-browser(box-shadow, (0px 0px 50px 10px rgba($AnkokuShoku, 0.5)));
+  //}
 
 body:after{
-  @include cross-browser(box-shadow, (0px 0px 50px 20px rgba(#000, 0.5)));
-  /*margin-bottom:1.2em;
-  bottom:16px;*/
   bottom: 0px;
+  @include cross-browser(box-shadow, (0px 0px 50px 20px rgba($AnkokuShoku, 0.5)));
 }
 
 body {
@@ -296,7 +294,7 @@ body {
   //background-color: rgba($Kokihi, 0.8);
 
   // http://h2ham.seesaa.net/article/169464108.html
-  @include cross-browser(box-shadow, (0 2px 4px rgba($Kokihi, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset));
+  @include cross-browser(box-shadow, (0 2px 4px rgba($Kokihi, 0.8), 0 0 40px rgba($AnkokuShoku, 0.1) inset));
   header {
 	margin-bottom: 0px;
 	padding: 0;
@@ -321,12 +319,13 @@ body {
 	width: $infoWidth;
   }
   .description {
-	font: #{$fontSmall}/1.6 $sans-serif;
+	//font: #{$fontSmall}/1.6 $sans-serif;
+	font-size: $fontSmall;
 	width: $mainWidth;
   }
   a {
 	text-decoration: none;
-	text-shadow: rgba(0, 0, 0, 1) 4px 2px 0;
+	text-shadow: rgba($AnkokuShoku, 1) 4px 2px 0;
 	color: $Shiro;
 	&:visited {
 	  color: $Shiro;
@@ -376,7 +375,8 @@ body {
 	  margin-left: 1em;
 	}
 	section.notes ol.notes {
-	  font: $fontSmall $sans-serif;
+	  //font: $fontSmall $sans-serif;
+	  font-size: $fontSmall;
 	  margin: 0;
 	  li {
 		list-style: none;
@@ -390,7 +390,8 @@ body {
 	  }
 	}
 	footer {
-	  font: $fontSmall $sans-serif;
+	  //font: $fontSmall $sans-serif;
+	  font-size: $fontSmall;
 	  border-top: 1px solid $NyuuhakuShoku;
 	  padding-top: 1em;
 	  a {
@@ -448,7 +449,7 @@ body {
 	  @include bordered-speech-bubble($Aijiro, $Ginnezu);
 	  margin: 0 0 16px 0;
 	  padding: 1em;
-	  font: $fontMiddle $serif;
+	  //font: $fontMiddle $serif;
 
 	  &:first-child, &:first-child {
 		/* tombloo=>twitter quote で余計な divがつく…… */
@@ -495,21 +496,22 @@ body {
 		// }
 	}
 
-	&.photo div.photo {
+	&.photo .photo {
 	  text-align: center;
 	  padding-bottom: 1em;
 
 	  img {
-		border: 16px #fff solid;
-		position: relative;
+		border: 16px $Shiro solid;
+		/* position: relative; */
 		background: none repeat scroll 0 0 #FFFFFF;
-		@include cross-browser(box-shadow, (0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset));
+		@include cross-browser(box-shadow, (0 1px 4px rgba($AnkokuShoku, 0.3), 0 0 40px rgba($AnkokuShoku, 0.1) inset));
 
+		/*
 		&:before, &:after {
 		  position: absolute;
 		  z-index: -2;
-		  content: "";
 		  width: 100%;
+		  content: "";
 		}
 
 		&:before {
@@ -517,8 +519,9 @@ body {
 		  bottom: 0;
 		  left: 10px;
 		  @include cross-browser(border-radius, 100px 100px 100px 100px / 10px 10px 10px 10px);
-		  @include cross-browser(box-shadow, 0 0 15px rgba(0, 0, 0, 0.6));
+		  @include cross-browser(box-shadow, 0 0 15px rgba($AnkokuShoku, 0.6));
 		}
+		 */
 	  }
 	}
 
@@ -549,14 +552,14 @@ body {
 	&.answer {
 	  font-family: $sans-serif;
 	}
-	header time, &.answer div.by {
+	header time, &.answer .by {
 	  font-weight: 700;
 	}
 	footer ul {
 	  margin: 0;
 	}
 
-	&.audio div.player {
+	&.audio .player {
 	  margin: 1em 0;
 	}
 	// add @asiamoth
@@ -565,11 +568,11 @@ body {
 	}
 	p, blockquote p, pre {
 	  margin-bottom: 1em;
-	  font: #{$fontMiddle}/1.6 $sans-serif;
+	  //font: #{$fontMiddle}/1.6 $sans-serif;
 	}
 	p img {
 	  //@include default-font;
-	  font: #{$fontMiddle}/1.6 $sans-serif;
+	  //font: #{$fontMiddle}/1.6 $sans-serif;
 	}
 	li.notes mark {
 	  font-style: normal;
@@ -586,7 +589,8 @@ body {
 
 #info {
   width: $infoWidth;
-  font: $fontSmall $sans-serif;
+  //font: $fontSmall $sans-serif;
+  font-size: $fontSmall;
   //background: $KiIro $image-png no-repeat 0 -168px;
 
   div{
@@ -646,12 +650,12 @@ body {
 	&.like_post .post_info_top {
 	  display: block !important;
 	  font-size: $fontMiddle;
-	  color: $Shikkoku;
+	  color: $AnkokuShoku;
 	  margin-bottom: 10px;
 	  border-bottom: 1px solid $Urahayanagi;
 	  padding: 5px 0;
 	  a {
-		color: $Shikkoku;
+		color: $AnkokuShoku;
 		text-decoration: none;
 		font-weight: 700;
 	  }
@@ -701,11 +705,11 @@ body {
 
 #footer {
   background: none repeat scroll 0 0 $Kokihi;
-  @include cross-browser(box-shadow, (0 -1px 4px rgba($Kokihi, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset));
+  @include cross-browser(box-shadow, (0 -1px 4px rgba($Kokihi, 0.8), 0 0 40px rgba($AnkokuShoku, 0.1) inset));
   margin-top: 0px;
   height: 40px;
   padding: 0;
-  // border-top: 2px solid $Shikkoku;
+  // border-top: 2px solid $AnkokuShoku;
 }
 
 /* http://hail2u.posterous.com/40908624 */

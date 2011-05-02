@@ -100,7 +100,7 @@ img {
   BEGIN: elements
  ----------------------------------- */
 body {
-  color: #0d0015; }
+  color: #16160e; }
 
 a:link, a:visited, a:hover, a:active {
   text-decoration: none;
@@ -112,12 +112,12 @@ a:visited {
   color: #bc64a4; }
 a:hover {
   color: #f3f3f2;
-  background-color: #0d0015;
-  box-shadow: #ff8000 1px 1px 1px, #ff8000 1px 1px 1px, #ff8000 1px 1px 11px, #ff8000 1px 1px 11px;
-  -moz-box-shadow: #ff8000 1px 1px 1px, #ff8000 1px 1px 1px, #ff8000 1px 1px 11px, #ff8000 1px 1px 11px;
-  -webkit-box-shadow: #ff8000 1px 1px 1px, #ff8000 1px 1px 1px, #ff8000 1px 1px 11px, #ff8000 1px 1px 11px;
-  -o-box-shadow: #ff8000 1px 1px 1px, #ff8000 1px 1px 1px, #ff8000 1px 1px 11px, #ff8000 1px 1px 11px;
-  -ms-box-shadow: #ff8000 1px 1px 1px, #ff8000 1px 1px 1px, #ff8000 1px 1px 11px, #ff8000 1px 1px 11px;
+  background-color: #16160e;
+  box-shadow: #cd5e3c 1px 1px 1px, #cd5e3c 1px 1px 1px, #cd5e3c 1px 1px 11px, #cd5e3c 1px 1px 11px;
+  -moz-box-shadow: #cd5e3c 1px 1px 1px, #cd5e3c 1px 1px 1px, #cd5e3c 1px 1px 11px, #cd5e3c 1px 1px 11px;
+  -webkit-box-shadow: #cd5e3c 1px 1px 1px, #cd5e3c 1px 1px 1px, #cd5e3c 1px 1px 11px, #cd5e3c 1px 1px 11px;
+  -o-box-shadow: #cd5e3c 1px 1px 1px, #cd5e3c 1px 1px 1px, #cd5e3c 1px 1px 11px, #cd5e3c 1px 1px 11px;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity = $opacity * 100)";
   filter: alpha(opacity=80);
   -moz-opacity: 0.8;
   -khtml-opacity: 0.8;
@@ -175,23 +175,12 @@ body:before, body:after {
   z-index: 20;
   text-indent: -9999px; }
 
-body:before {
-  top: 0;
-  box-shadow: 0px 0px 50px 10px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0px 0px 50px 10px rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: 0px 0px 50px 10px rgba(0, 0, 0, 0.5);
-  -o-box-shadow: 0px 0px 50px 10px rgba(0, 0, 0, 0.5);
-  -ms-box-shadow: 0px 0px 50px 10px rgba(0, 0, 0, 0.5); }
-
 body:after {
-  box-shadow: 0px 0px 50px 20px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0px 0px 50px 20px rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: 0px 0px 50px 20px rgba(0, 0, 0, 0.5);
-  -o-box-shadow: 0px 0px 50px 20px rgba(0, 0, 0, 0.5);
-  -ms-box-shadow: 0px 0px 50px 20px rgba(0, 0, 0, 0.5);
-  /*margin-bottom:1.2em;
-  bottom:16px;*/
-  bottom: 0px; }
+  bottom: 0px;
+  box-shadow: 0px 0px 50px 20px rgba(22, 22, 14, 0.5);
+  -moz-box-shadow: 0px 0px 50px 20px rgba(22, 22, 14, 0.5);
+  -webkit-box-shadow: 0px 0px 50px 20px rgba(22, 22, 14, 0.5);
+  -o-box-shadow: 0px 0px 50px 20px rgba(22, 22, 14, 0.5); }
 
 body {
   background-color: rgba(255, 217, 0, 0.8); }
@@ -235,8 +224,7 @@ body {
 
 #container:before, #container:after, article:before, article:after, #links:before, #links:after {
   /** A new micro clearfix hack ? Nicolas Gallagher
-   * http://nicolasgallagher.com/micro-clearfix-hack/
-   */
+    * http://nicolasgallagher.com/micro-clearfix-hack/ */
   /* For modern browsers */
   content: "";
   display: table; }
@@ -251,11 +239,10 @@ body {
  ----------------*/
 #banner {
   background-color: #c9171e;
-  box-shadow: 0 2px 4px rgba(201, 23, 30, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-  -moz-box-shadow: 0 2px 4px rgba(201, 23, 30, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-  -webkit-box-shadow: 0 2px 4px rgba(201, 23, 30, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-  -o-box-shadow: 0 2px 4px rgba(201, 23, 30, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-  -ms-box-shadow: 0 2px 4px rgba(201, 23, 30, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset; }
+  box-shadow: 0 2px 4px rgba(201, 23, 30, 0.8), 0 0 40px rgba(22, 22, 14, 0.1) inset;
+  -moz-box-shadow: 0 2px 4px rgba(201, 23, 30, 0.8), 0 0 40px rgba(22, 22, 14, 0.1) inset;
+  -webkit-box-shadow: 0 2px 4px rgba(201, 23, 30, 0.8), 0 0 40px rgba(22, 22, 14, 0.1) inset;
+  -o-box-shadow: 0 2px 4px rgba(201, 23, 30, 0.8), 0 0 40px rgba(22, 22, 14, 0.1) inset; }
   #banner header {
     margin-bottom: 0px;
     padding: 0; }
@@ -270,11 +257,11 @@ body {
     font: 197%/1.6 "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     width: 352px; }
   #banner .description {
-    font: 77%/1.6 "MaruGoR-AA", "MeiryoKe_PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    font-size: 77%;
     width: 576px; }
   #banner a {
     text-decoration: none;
-    text-shadow: black 4px 2px 0;
+    text-shadow: #16160e 4px 2px 0;
     color: white; }
     #banner a:visited {
       color: white; }
@@ -291,7 +278,6 @@ body {
     -moz-box-shadow: 0px 2px 2px 0px rgba(193, 216, 172, 0.8);
     -webkit-box-shadow: 0px 2px 2px 0px rgba(193, 216, 172, 0.8);
     -o-box-shadow: 0px 2px 2px 0px rgba(193, 216, 172, 0.8);
-    -ms-box-shadow: 0px 2px 2px 0px rgba(193, 216, 172, 0.8);
     padding: 1em; }
     #main article header p {
       display: block;
@@ -308,7 +294,7 @@ body {
       padding-left: 1em;
       margin-left: 1em; }
     #main article section.notes ol.notes {
-      font: 77% "MaruGoR-AA", "MeiryoKe_PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+      font-size: 77%;
       margin: 0; }
       #main article section.notes ol.notes li {
         list-style: none;
@@ -319,7 +305,7 @@ body {
           vertical-align: middle;
           border: 2px solid #afafb0; }
     #main article footer {
-      font: 77% "MaruGoR-AA", "MeiryoKe_PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+      font-size: 77%;
       border-top: 1px solid #f3f3f3;
       padding-top: 1em; }
       #main article footer a {
@@ -360,8 +346,7 @@ body {
       -webkit-border-radius: 8px;
       border-radius: 8px;
       margin: 0 0 16px 0;
-      padding: 1em;
-      font: 123.1% "IPA モナー P明朝", "IPA mona PMincho", "IPA P明朝", "IPA PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "ＭＳ Ｐ明朝", "MS PMincho", serif; }
+      padding: 1em; }
       #main article.quote blockquote:before {
         border-top-width: 16px;
         border-right-width: 16px;
@@ -393,37 +378,33 @@ body {
       #main article.quote blockquote:first-child, #main article.quote blockquote:first-child {
         /* tombloo=>twitter quote で余計な divがつく…… */
         display: inline; }
-    #main article.photo div.photo {
+    #main article.photo .photo {
       text-align: center;
       padding-bottom: 1em; }
-      #main article.photo div.photo img {
-        border: 16px #fff solid;
-        position: relative;
+      #main article.photo .photo img {
+        border: 16px white solid;
+        /* position: relative; */
         background: none repeat scroll 0 0 #FFFFFF;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-        -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-        -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-        -o-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-        -ms-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset; }
-        #main article.photo div.photo img:before, #main article.photo div.photo img:after {
-          position: absolute;
-          z-index: -2;
-          content: "";
-          width: 100%; }
-        #main article.photo div.photo img:before {
-          right: 10px;
-          bottom: 0;
-          left: 10px;
-          border-radius: 100px 100px 100px 100px/10px 10px 10px 10px;
-          -moz-border-radius: 100px 100px 100px 100px/10px 10px 10px 10px;
-          -webkit-border-radius: 100px 100px 100px 100px/10px 10px 10px 10px;
-          -o-border-radius: 100px 100px 100px 100px/10px 10px 10px 10px;
-          -ms-border-radius: 100px 100px 100px 100px/10px 10px 10px 10px;
-          box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-          -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-          -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-          -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-          -ms-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6); }
+        box-shadow: 0 1px 4px rgba(22, 22, 14, 0.3), 0 0 40px rgba(22, 22, 14, 0.1) inset;
+        -moz-box-shadow: 0 1px 4px rgba(22, 22, 14, 0.3), 0 0 40px rgba(22, 22, 14, 0.1) inset;
+        -webkit-box-shadow: 0 1px 4px rgba(22, 22, 14, 0.3), 0 0 40px rgba(22, 22, 14, 0.1) inset;
+        -o-box-shadow: 0 1px 4px rgba(22, 22, 14, 0.3), 0 0 40px rgba(22, 22, 14, 0.1) inset;
+        		/*
+        		&:before, &:after {
+        		  position: absolute;
+        		  z-index: -2;
+        		  width: 100%;
+        		  content: "";
+        		}
+        
+        		&:before {
+        		  right: 10px;
+        		  bottom: 0;
+        		  left: 10px;
+        		  @include cross-browser(border-radius, 100px 100px 100px 100px / 10px 10px 10px 10px);
+        		  @include cross-browser(box-shadow, 0 0 15px rgba($AnkokuShoku, 0.6));
+        		}
+        		 */ }
     #main article.chat p {
       margin: 0;
       padding: 1em; }
@@ -442,19 +423,16 @@ body {
         margin-bottom: 0; }
     #main article.answer {
       font-family: "MaruGoR-AA", "MeiryoKe_PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; }
-    #main article header time, #main article.answer div.by {
+    #main article header time, #main article.answer .by {
       font-weight: 700; }
     #main article footer ul {
       margin: 0; }
-    #main article.audio div.player {
+    #main article.audio .player {
       margin: 1em 0; }
     #main article header p a:visited {
       color: #bc64a4; }
     #main article p, #main article blockquote p, #main article pre {
-      margin-bottom: 1em;
-      font: 123.1%/1.6 "MaruGoR-AA", "MeiryoKe_PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; }
-    #main article p img {
-      font: 123.1%/1.6 "MaruGoR-AA", "MeiryoKe_PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; }
+      margin-bottom: 1em; }
     #main article li.notes mark {
       font-style: normal; }
     #main article .photo a {
@@ -463,7 +441,7 @@ body {
 
 #info {
   width: 352px;
-  font: 77% "MaruGoR-AA", "MeiryoKe_PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; }
+  font-size: 77%; }
   #info div {
     background: transparent url("http://static.tumblr.com/i7vkogx/meblhoggu/csg-4d748e4433eb4.png") no-repeat 0 -168px;
     padding-top: 144px; }
@@ -504,12 +482,12 @@ body {
     #links li.like_post .post_info_top {
       display: block !important;
       font-size: 123.1%;
-      color: #0d0015;
+      color: #16160e;
       margin-bottom: 10px;
       border-bottom: 1px solid #c1d8ac;
       padding: 5px 0; }
       #links li.like_post .post_info_top a {
-        color: #0d0015;
+        color: #16160e;
         text-decoration: none;
         font-weight: 700; }
   #links footer ul {
@@ -527,7 +505,6 @@ body {
   -moz-border-radius: 12px;
   -webkit-border-radius: 12px;
   -o-border-radius: 12px;
-  -ms-border-radius: 12px;
   background: white url("http://static.tumblr.com/i7vkogx/meblhoggu/csg-4d748e4433eb4.png") no-repeat fixed 0 -72;
   width: 16px;
   height: 16px;
@@ -556,11 +533,10 @@ body {
 
 #footer {
   background: none repeat scroll 0 0 #c9171e;
-  box-shadow: 0 -1px 4px rgba(201, 23, 30, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-  -moz-box-shadow: 0 -1px 4px rgba(201, 23, 30, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-  -webkit-box-shadow: 0 -1px 4px rgba(201, 23, 30, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-  -o-box-shadow: 0 -1px 4px rgba(201, 23, 30, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-  -ms-box-shadow: 0 -1px 4px rgba(201, 23, 30, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0 -1px 4px rgba(201, 23, 30, 0.8), 0 0 40px rgba(22, 22, 14, 0.1) inset;
+  -moz-box-shadow: 0 -1px 4px rgba(201, 23, 30, 0.8), 0 0 40px rgba(22, 22, 14, 0.1) inset;
+  -webkit-box-shadow: 0 -1px 4px rgba(201, 23, 30, 0.8), 0 0 40px rgba(22, 22, 14, 0.1) inset;
+  -o-box-shadow: 0 -1px 4px rgba(201, 23, 30, 0.8), 0 0 40px rgba(22, 22, 14, 0.1) inset;
   margin-top: 0px;
   height: 40px;
   padding: 0; }
