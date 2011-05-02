@@ -695,11 +695,11 @@ body {
 
 /* add @asiamoth */
 
-#main h1,
-#info h1,
-#links h1,
-#links .search h2,
-#links nav h2 {
+#main > h1,
+#info > h1,
+#links > h1,
+#links .search > h2,
+#links nav > h2 {
   @include hide;
 }
 

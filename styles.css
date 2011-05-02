@@ -511,22 +511,22 @@ body {
   padding: 4px 4px 4px 20px; }
 
 /* add @asiamoth */
-#main h1,
-#info h1,
-#links h1,
-#links .search h2,
-#links nav h2 {
+#main > h1,
+#info > h1,
+#links > h1,
+#links .search > h2,
+#links nav > h2 {
   height: 0;
   width: 0;
   overflow: hidden;
   display: block;
   z-index: -1;
   font-size: 0; }
-  .lte5 #main h1, .lte5
-  #info h1, .lte5
-  #links h1, .lte5
-  #links .search h2, .lte5
-  #links nav h2 {
+  .lte5 #main > h1, .lte5
+  #info > h1, .lte5
+  #links > h1, .lte5
+  #links .search > h2, .lte5
+  #links nav > h2 {
     display: none;
     padding-top: 0px;
     zoom: 1; }
