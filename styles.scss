@@ -168,7 +168,7 @@ q {
 }
 
 nav ul {
-  padding-top: 1em;
+  //padding-top: 1em;
   // border-top: 1px solid $Urahayanagi;
   margin: 1em 0;
 }
@@ -612,8 +612,29 @@ body {
 }
 
 #paging {
-  text-align: center;
   margin: 20px auto;
+  font: $fontSmall $helvetica;
+  text-align: center;
+
+  li {
+	margin-right: 8px;
+	border: 4px solid $Ginnezu;
+	background-color: $Aijiro;
+	@include inline-block;
+
+	a{
+	  padding: 32px;
+	  display: block;
+	}
+  }
+
+  .nextPage {
+	@include cross-browser(border-radius, (64px 8px 8px 64px / 32px 8px 8px 32px));
+  }
+
+  .prevPage {
+	@include cross-browser(border-radius, (8px 64px 64px 8px / 8px 32px 32px 8px));
+  }
 }
 
 #links {

@@ -132,7 +132,6 @@ q {
   background-color: #ebf6f7; }
 
 nav ul {
-  padding-top: 1em;
   margin: 1em 0; }
 
 code {
@@ -224,7 +223,7 @@ body {
 
 #container:before, #container:after, article:before, article:after, #links:before, #links:after {
   /** A new micro clearfix hack ? Nicolas Gallagher
-    * http://nicolasgallagher.com/micro-clearfix-hack/ */
+   * http://nicolasgallagher.com/micro-clearfix-hack/ */
   /* For modern browsers */
   content: "";
   display: table; }
@@ -453,8 +452,32 @@ body {
     margin: 0 0 2px 20px; }
 
 #paging {
-  text-align: center;
-  margin: 20px auto; }
+  margin: 20px auto;
+  font: 77% "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  text-align: center; }
+  #paging li {
+    margin-right: 8px;
+    border: 4px solid #afafb0;
+    background-color: #ebf6f7;
+    /* For modern browsers */
+    display: inline-block; }
+    #paging li .lte7 {
+      display: inline;
+      /* For IE 6/7 (trigger hasLayout) */
+      zoom: 1; }
+    #paging li a {
+      padding: 32px;
+      display: block; }
+  #paging .nextPage {
+    border-radius: 64px 8px 8px 64px/32px 8px 8px 32px;
+    -moz-border-radius: 64px 8px 8px 64px/32px 8px 8px 32px;
+    -webkit-border-radius: 64px 8px 8px 64px/32px 8px 8px 32px;
+    -o-border-radius: 64px 8px 8px 64px/32px 8px 8px 32px; }
+  #paging .prevPage {
+    border-radius: 8px 64px 64px 8px/8px 32px 32px 8px;
+    -moz-border-radius: 8px 64px 64px 8px/8px 32px 32px 8px;
+    -webkit-border-radius: 8px 64px 64px 8px/8px 32px 32px 8px;
+    -o-border-radius: 8px 64px 64px 8px/8px 32px 32px 8px; }
 
 #links {
   width: 352px;
@@ -546,7 +569,6 @@ body {
   #banner, #container, #info, #main, #links {
     margin: 0;
     width: 100%; } }
-
 /* ------------------------------------
   END: layout
  ----------------------------------- */

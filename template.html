@@ -355,13 +355,15 @@
         <nav id="paging">
           <p>Page {CurrentPage} of {TotalPages}</p>
 
-          <!-- add rel @asiamoth -->
-          {block:NextPage}
-          <a rel="next" href="{NextPage}">&larr; Older</a>
-          {/block:NextPage}
-          {block:PreviousPage}
-          <a rel="prev" href="{PreviousPage}">Newer &rarr;</a>
-          {/block:PreviousPage}
+          <!-- add ul, li, rel @asiamoth -->
+          <ul>
+            {block:NextPage}
+            <li class="nextPage"><a rel="next" href="{NextPage}">&larr; Older</a></li>
+            {/block:NextPage}
+            {block:PreviousPage}
+            <li class="prevPage"><a rel="prev" href="{PreviousPage}">Newer &rarr;</a></li>
+            {/block:PreviousPage}
+          </ul>
 
         </nav>
         <!-- /#paging -->

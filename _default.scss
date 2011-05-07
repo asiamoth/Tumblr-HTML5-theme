@@ -108,7 +108,7 @@ $raquo: "\00BB";
   &:before,
   &:after {
 	/** A new micro clearfix hack ? Nicolas Gallagher
-	  * http://nicolasgallagher.com/micro-clearfix-hack/ */
+	 * http://nicolasgallagher.com/micro-clearfix-hack/ */
 	/* For modern browsers */
 	content:"";
 	display:table;
@@ -166,6 +166,20 @@ $raquo: "\00BB";
    * http://hail2u.net/blog/webdesign/doubled_margin_bug_at_ie.html */
   display: inline;
 }
+
+// 不特定の数の横に並ぶブロック要素をセンタリングさせる | CSS-EBLOG
+// http://css-eblog.com/csstechnique/display-inlineblock.html
+@mixin inline-block {
+  /* For modern browsers */
+  display: inline-block;
+
+  .lte7 {
+	display: inline;
+	/* For IE 6/7 (trigger hasLayout) */
+	zoom: 1;
+  }
+}
+
 
 // Image Replacement
 @mixin rep($z-index: 3, $position: relative) {
