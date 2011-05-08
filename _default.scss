@@ -173,9 +173,9 @@ $raquo: "\00BB";
   /* For modern browsers */
   display: inline-block;
 
-  .lte7 {
-	display: inline;
+  .lte7 & {
 	/* For IE 6/7 (trigger hasLayout) */
+	display: inline;
 	zoom: 1;
   }
 }
@@ -261,6 +261,10 @@ $raquo: "\00BB";
   -moz-border-radius: $round-size;
   -webkit-border-radius: $round-size;
   border-radius: $round-size;
+
+  .lte7 & {
+	position: static;
+  }
 
   &:before {
 	border-top-width: $tail-size;

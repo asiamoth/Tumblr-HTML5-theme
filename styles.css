@@ -346,6 +346,8 @@ body {
       border-radius: 8px;
       margin: 0 0 16px 0;
       padding: 1em; }
+      .lte7 #main article.quote blockquote {
+        position: static; }
       #main article.quote blockquote:before {
         border-top-width: 16px;
         border-right-width: 16px;
@@ -374,7 +376,7 @@ body {
         width: 0;
         height: 0;
         content: ""; }
-      #main article.quote blockquote:first-child, #main article.quote blockquote:first-child {
+      #main article.quote blockquote:first-child {
         /* tombloo=>twitter quote で余計な divがつく…… */
         display: inline; }
     #main article.photo .photo {
@@ -461,13 +463,19 @@ body {
     background-color: #ebf6f7;
     /* For modern browsers */
     display: inline-block; }
-    #paging li .lte7 {
-      display: inline;
+    .lte7 #paging li {
       /* For IE 6/7 (trigger hasLayout) */
+      display: inline;
       zoom: 1; }
+    .lte7 #paging li {
+      width: 64px;
+      height: 64px; }
     #paging li a {
       padding: 32px;
       display: block; }
+      .lte6 #paging li a {
+        /* for IE 6 ── IE7 に指定すると中身が消える */
+        position: relative; }
   #paging .nextPage {
     border-radius: 64px 8px 8px 64px/32px 8px 8px 32px;
     -moz-border-radius: 64px 8px 8px 64px/32px 8px 8px 32px;
@@ -498,10 +506,10 @@ body {
       .lte6 #links li.html5logo {
         background: transparent url("http://static.tumblr.com/i7vkogx/qHclhq1ud/_i7vkogx_4vdlhogxr_csg-4d749037e5c52.gif.png") no-repeat 0 -96px; }
       #links li.html5logo a {
-        display: block;
         padding-top: 64px;
-        width: 165px;
-        position: absolute; }
+        display: block;
+        position: absolute;
+        width: 165px; }
     #links li.like_post .post_info_top {
       display: block !important;
       font-size: 123.1%;

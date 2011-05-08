@@ -451,7 +451,7 @@ body {
 	  padding: 1em;
 	  //font: $fontMiddle $serif;
 
-	  &:first-child, &:first-child {
+	  &:first-child {
 		/* tombloo=>twitter quote で余計な divがつく…… */
 		display: inline;
 	  }
@@ -622,9 +622,19 @@ body {
 	background-color: $Aijiro;
 	@include inline-block;
 
-	a{
+	.lte7 & {
+	  width: 64px;
+	  height: 64px;
+	}
+
+	a {
 	  padding: 32px;
 	  display: block;
+
+	  .lte6 & {
+		/* for IE 6 ── IE7 に指定すると中身が消える */
+		position: relative;
+	  }
 	}
   }
 
@@ -660,11 +670,11 @@ body {
 	  .lte6 & {
 		background: transparent $image-gif no-repeat 0 -96px;
 	  }
-	  a{
-		display: block;
+	  a {
 		padding-top: 64px;
-		width: 165px;
+		display: block;
 		position: absolute;
+		width: 165px;
 	  }
 	}
 
